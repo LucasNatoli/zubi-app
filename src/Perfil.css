@@ -1,0 +1,8 @@
+.anonymous {
+  width: 100%;
+  text-align: center;
+  border: 1px solid gray;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: gainsboro;
+}
