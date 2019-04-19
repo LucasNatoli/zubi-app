@@ -1,8 +1,8 @@
 import { Route } from 'react-router-dom'
 import React from 'react';
-import DashboardInstructor from "./DashboardInstructor";
-import WizardCapacitacion from './WizardCapacitacion/WizardCapacitacion'
-import WizardConsultoria from './WizardConsultoria/WizardConsultoria'
+import DashboardInstructor from "./components/DashboardInstructor";
+import WizardCapacitacion from './components/WizardCapacitacion/WizardCapacitacion'
+import WizardConsultoria from './components/WizardConsultoria/WizardConsultoria'
 import Perfil from './Perfil';
 
 export default function AppRouter() {
