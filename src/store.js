@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+/* import { createStore, combineReducers, applyMiddleware } from 'redux'
 import messageReducer from './reducers/message'
 import thunk from 'redux-thunk'
 const reducer = combineReducers({
@@ -8,4 +8,4 @@ const store = createStore(
 	reducer,
 	applyMiddleware(thunk)
 )
-export default store;
+export default store; */
