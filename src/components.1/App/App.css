@@ -1,0 +1,61 @@
+/* ZUBI STYLE */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+body {
+    background: #648cff;
+}
+
+  .ant-layout.zubi-app {
+    background-color: transparent;
+  }
+
+  .ant-layout.zubi-app .ant-card {
+      width: 335px;
+      margin: 40px auto;
+      padding: 10px;
+      box-sizing: content-box;
+  }
+  .ant-layout.zubi-app .ant-card label {
+      color: #999;
+      font-family: Ubuntu;
+  }
+  .ant-btn {
+    position: relative;
+    margin-bottom: .3125rem;
+    font-size: .875rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    will-change: box-shadow,transform;
+    color: #fff;
+    background-color: transparent;
+    border-color: #ccc;
+    border-radius: .125rem;
+    font-family: Ubuntu;
+    font-weight: 700;
+  }
+  a.ant-btn {
+      line-height: 32px;
+  }
+  .ant-btn.ant-btn-primary {
+    background-color: #fc6a42;
+    color: #fff;
+  }
+  .ant-btn.ant-btn-default {
+    color: #fc6a42;
+    background-color: transparent;
+  }
+  .ant-btn.ant-btn-primary:hover {
+    color: #fc6a42;
+    background-color: transparent;
+    border: none;
+    padding: 0 15px;
+  }
+  .ant-btn.ant-btn-default:hover {
+      color: #fff;
+      background-color: #fc6a42;
+  }
+

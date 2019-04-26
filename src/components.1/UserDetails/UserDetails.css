@@ -1,0 +1,7 @@
+.user-details {
+    display: flex;
+    align-items: baseline;
+}
+.user-details h4 {
+    color: #f1f1f1;
+}
