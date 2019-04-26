@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { userConstants } from '../constants';
+=======
+import { userConstants } from '../types';
+>>>>>>> master
 
 export function users(state = {}, action) {
   switch (action.type) {

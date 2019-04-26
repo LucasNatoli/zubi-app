@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { userConstants } from '../constants';
+=======
+import { userConstants } from '../types';
+>>>>>>> master
 
 let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { loggedIn: true, user } : {};

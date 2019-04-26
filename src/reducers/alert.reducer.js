@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { alertConstants } from '../constants';
+=======
+import { alertConstants } from '../types';
+>>>>>>> master
 
 export function alert(state = {}, action) {
   switch (action.type) {

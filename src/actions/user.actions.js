@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { userConstants } from '../constants';
+=======
+import { userConstants } from '../types';
+>>>>>>> master
 import { userService } from '../services';
 import { alertActions } from './';
 import { history } from '../helpers';
