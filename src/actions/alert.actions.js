@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { alertConstants } from '../constants';
-=======
-import { alertConstants } from '../_constants';
->>>>>>> master
 
 export const alertActions = {
     success,

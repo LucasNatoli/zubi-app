@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 import { authHeader } from '../helpers';
 
 const config = {
     apiUrl : 'http://bigos.lan/wp-json/wp-react/v2'
 }
 
-=======
-import config from 'config';
-import { authHeader } from '../helpers';
-
->>>>>>> master
 export const userService = {
     login,
     logout,
@@ -27,11 +21,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
-<<<<<<< HEAD
     return fetch(`${config.apiUrl}/login`, requestOptions)
-=======
-    return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
->>>>>>> master
         .then(handleResponse)
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -101,11 +91,7 @@ function handleResponse(response) {
             if (response.status === 401) {
                 // auto logout if 401 response returned from api
                 logout();
-<<<<<<< HEAD
                 //TODO: Check this out => location.reload(true);
-=======
-                location.reload(true);
->>>>>>> master
             }
 
             const error = (data && data.message) || response.statusText;

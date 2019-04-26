@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import Iso from '../../assets/images/logo-icon.png';
 import Logo from '../../assets/images/logo-text.png';
-import UserDetails from '../../components/UserDetails/UserDetails';
+import UserDetails from '../UserDetails/UserDetails';
 import './DashBoard.css';
 
 class DashBoard extends React.Component {
@@ -11,7 +11,7 @@ class DashBoard extends React.Component {
         const {
             Header, Content, Footer, Sider,
           } = Layout;
-          
+
         return (
             <Layout className="dashboard">
             <Sider
