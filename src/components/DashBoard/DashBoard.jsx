@@ -6,7 +6,6 @@ import UserDetails from '../UserDetails/UserDetails';
 import './DashBoard.css';
 
 class DashBoard extends React.Component {
-
     render() {
         const {
             Header, Content, Footer, Sider,
@@ -18,9 +17,11 @@ class DashBoard extends React.Component {
               breakpoint="lg"
               collapsedWidth="0"
               onBreakpoint={(broken) => { console.log(broken); }}
-              onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
             >
-              <UserDetails/>
+              <div className="logo">
+                  <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
+                  <img src={Logo} alt="Zubi-Logo" className="logo-text"/>
+              </div>
               <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                 <Menu.Item key="1">
                   <Icon type="user" />
@@ -38,18 +39,18 @@ class DashBoard extends React.Component {
                   <Icon type="user" />
                   <span className="nav-text">Agenda</span>
                 </Menu.Item>
-                <Menu.Item key="4">
+                <Menu.Item key="5">
                   <Icon type="user" />
                   <span className="nav-text">Cerrar Session</span>
                 </Menu.Item>                
               </Menu>
             </Sider>
             <Layout>
-              <Header style={{ background: '#648cff', padding: 0 }} className="header">
-                <div className="logo hidden-lg">
-                    <img src={Iso} alt="Zubi-Logo" />
-                    <img src={Logo} alt="Zubi-Logo" />
+              <Header className="header">
+                <div className="logo">
+                    <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
                 </div>
+                <UserDetails/>
               </Header>
               <Content>
                 <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
