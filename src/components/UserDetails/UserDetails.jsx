@@ -11,7 +11,7 @@ class UserDetails extends React.Component {
                 <span style={{ marginRight: 24 }}>
                 <Badge count={1}><Avatar shape="square" icon="user" /></Badge>
                 </span>
-                <h4>NestorK1973</h4>
+                <i nz-icon nzType="down" nzTheme="outline"></i>
             </div>
         );
     }
