@@ -38,7 +38,7 @@ class DashBoard extends React.Component {
                   <Icon type="user" />
                   <span className="nav-text">Agenda</span>
                 </Menu.Item>
-                <Menu.Item key="4">
+                <Menu.Item key="5">
                   <Icon type="user" />
                   <span className="nav-text">Cerrar Session</span>
                 </Menu.Item>                

@@ -1,5 +1,5 @@
 import React from 'react'
-import ListGroup from 'react-bootstrap/ListGroup'
+import { Layout, Menu, Icon } from 'antd';
 import ConsultingListItem from './ConsultingListItem'
 
 const ConsultingList = ({consulting, onConsultingClick}) => (

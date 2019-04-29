@@ -1,9 +1,16 @@
 import { zubiConstants } from '../constants';
 
-export function zubi(state={}, action){
+export function zubi(state={
+
+//aca pongo un estado incial parcial, por ej el loading
+
+
+
+}, action){
   switch (action.type) {
     case zubiConstants.ZUBI_GETALL_CONS_REQUEST:
       return {
+        //devolver el estado concatenado. PUROOOO
         loadingConsultorias: true
       };
     case zubiConstants.ZUBI_GETALL_CONS_SUCCESS:
