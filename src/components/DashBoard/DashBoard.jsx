@@ -12,11 +12,13 @@ class DashBoard extends React.Component {
           } = Layout;
 
         return (
-            <Layout className="dashboard">
+          <Layout className="dashboard">
             <Sider
               breakpoint="lg"
               collapsedWidth="0"
+              width="200"
               onBreakpoint={(broken) => { console.log(broken); }}
+              onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
             >
               <div className="logo">
                   <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
@@ -47,12 +49,9 @@ class DashBoard extends React.Component {
             </Sider>
             <Layout>
               <Header className="header">
-                <div className="logo">
-                    <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
-                </div>
                 <UserDetails/>
               </Header>
-              <Content>
+              <Content style={{ margin: '24px 16px 0' }}>
                 <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
                   content
                 </div>

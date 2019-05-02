@@ -8,7 +8,6 @@ import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 //import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import DashBoard from '../DashBoard/DashBoard';
-import { Layout } from 'antd';
 
 import './App.css';
 
@@ -26,7 +25,7 @@ class App extends React.Component {
   render() {
     const { alert } = this.props;
     return (
-      <Layout className="zubi-app">
+      <div className="zubi-app">
         {alert.message &&
           <div className={`alert ${alert.type}`}>{alert.message}</div>
         }
@@ -36,7 +35,7 @@ class App extends React.Component {
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
         </Router>
-      </Layout>
+      </div>
     )
   }
 }
