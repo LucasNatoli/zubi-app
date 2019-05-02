@@ -21,6 +21,9 @@
 .ant-layout-sider-zero-width-trigger,
 .ant-layout-sider-zero-width-trigger:hover {
     background: #fc6a42;
+}
+
+.ant-layout-sider-zero-width-trigger {
     top: 11px;
 }
 

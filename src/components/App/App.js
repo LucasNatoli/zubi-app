@@ -3,12 +3,10 @@ import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { history } from '../../helpers';
 import { alertActions } from '../../actions'
-import { Layout } from 'antd';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import DashBoard from '../DashBoard/DashBoard';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
-import DashBoard from '../DashBoard/DashBoard';
 import './App.css';
 import ConsultingEditor from '../Consulting-draft/ConsultingEditor';
 

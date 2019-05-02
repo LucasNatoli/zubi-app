@@ -19,7 +19,7 @@ class DashBoard extends React.Component {
           collapsedWidth="0"
           width="200"
           onBreakpoint={(broken) => { console.log(broken); }}
-          onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+          onCollapse={(collapsed, type) => { console.log(collapsed ? "Colapsado" : "expandido"); }}
         >
           <div className="logo">
             <img src={Iso} alt="Zubi-Logo" className="logo-iso" />
