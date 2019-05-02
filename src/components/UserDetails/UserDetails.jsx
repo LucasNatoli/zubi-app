@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge, Avatar } from 'antd';
+import { Badge, Avatar, i } from 'antd';
 import './UserDetails.css';
 
 class UserDetails extends React.Component {
