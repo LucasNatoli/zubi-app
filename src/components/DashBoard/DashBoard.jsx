@@ -1,15 +1,14 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import Iso from '../../assets/images/logo-icon.png';
 import Logo from '../../assets/images/logo-text.png';
-import IsoBlue from '../../assets/images/logo-icon_blue.png';
+import IsoBlue from '../../assets/images/iso-color-blue.svg';
+import IsoWhite from '../../assets/images/iso-color-white.svg';
 import UserDetails from '../UserDetails/UserDetails';
-import Consulting from '../Consulting-draft/Consulting';
+//import Consulting from '../Consulting-draft/Consulting';
 import './DashBoard.css';
-import { Route } from 'react-router-dom';
+//import { Route } from 'react-router-dom';
 
 class DashBoard extends React.Component {
-  
     render() {
         const {
             Header, Content, Footer, Sider,
@@ -25,8 +24,8 @@ class DashBoard extends React.Component {
               onCollapse={(collapsed, type) => { console.log(collapsed ? "Colapsado" : "expandido"); }}
             >
               <div className="logo">
-                  <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
-                  <img src={Logo} alt="Zubi-Logo" className="logo-text"/>
+                <img src={IsoWhite} alt="logo" className="logo-iso" />
+                <img src={Logo} alt="Zubi-Logo" className="logo-text"/>
               </div>
               <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                 <Menu.Item key="1">
@@ -54,7 +53,7 @@ class DashBoard extends React.Component {
             <Layout>
               <Header className="header">
                 <div className="logo">
-                    <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"/>
+                  <img src={IsoBlue} alt="logo" className="logo-iso" />
                 </div>
                 <UserDetails/>
               </Header>
