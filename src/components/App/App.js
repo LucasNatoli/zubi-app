@@ -6,7 +6,7 @@ import { alertActions } from '../../actions'
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import DashBoard from '../DashBoard/DashBoard';
-import PrivateRoute from '../PrivateRoute/PrivateRoute';
+//import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
 import ConsultingEditor from '../Consulting-draft/ConsultingEditor';
 
@@ -29,12 +29,12 @@ class App extends React.Component {
           <div className={`alert ${alert.type}`}>{alert.message}</div>
         }
         <Router history={history}>
-            <PrivateRoute exact path="/" component={DashBoard} page="home"/>
-            <PrivateRoute exact path="/mis-consultorias" component={DashBoard}/>
-            <PrivateRoute exact path="/mis-capacitaciones" component={DashBoard}/>
-            <PrivateRoute exact path="/mis-citas" component={DashBoard}/>
+            <Route exact path="/" component={DashBoard} page="home"/>
+            <Route exact path="/mis-consultorias" component={DashBoard}/>
+            <Route exact path="/mis-capacitaciones" component={DashBoard}/>
+            <Route exact path="/mis-citas" component={DashBoard}/>
             
-            <PrivateRoute exact path="/editar-consultoria" component={ConsultingEditor}/>
+            <Route exact path="/editar-consultoria" component={ConsultingEditor}/>
             
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
