@@ -5,11 +5,11 @@ const config = {
 }
 
 export const zubiService = {
-  misConsultorias: misConsultorias,
+  fetchConsultorias: fetchConsulting,
   misCapacitaciones: misCapacitaciones
 };
 
-function misConsultorias() {
+function fetchConsulting() {
   const requestOptions = {
       method: 'GET',
       headers: authHeader()

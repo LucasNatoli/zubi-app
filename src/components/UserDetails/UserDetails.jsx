@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Badge, Avatar, Icon } from 'antd';
 import './UserDetails.css';
 
