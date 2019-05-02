@@ -1,7 +1,16 @@
 .user-details {
     display: flex;
     align-items: baseline;
+    width: 100px;
+    color: #001529;
 }
 .user-details h4 {
-    color: #f1f1f1;
+    color: #001529;
 }
+.user-details .caret-down svg{
+    color: #001529;
+    vertical-align: text-bottom;
+}
+.user-details .ant-avatar {
+    background: #001529;
+}   
