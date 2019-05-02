@@ -4,9 +4,12 @@ import Iso from '../../assets/images/logo-icon.png';
 import Logo from '../../assets/images/logo-text.png';
 import IsoBlue from '../../assets/images/logo-icon_blue.png';
 import UserDetails from '../UserDetails/UserDetails';
+import Consulting from '../Consulting-draft/Consulting';
 import './DashBoard.css';
+import { Route } from 'react-router-dom';
 
 class DashBoard extends React.Component {
+  
     render() {
         const {
             Header, Content, Footer, Sider,
@@ -19,7 +22,7 @@ class DashBoard extends React.Component {
               collapsedWidth="0"
               width="200"
               onBreakpoint={(broken) => { console.log(broken); }}
-              onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+              onCollapse={(collapsed, type) => { console.log(collapsed ? "Colapsado" : "expandido"); }}
             >
               <div className="logo">
                   <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
@@ -63,10 +66,10 @@ class DashBoard extends React.Component {
               <Footer style={{ textAlign: 'center' }}>
                 Footer
               </Footer>
-            </Layout>
-          </Layout>
-        );
-    }
+        </Layout>
+      </Layout>
+    );
+  }
 }
 
 export default DashBoard;
