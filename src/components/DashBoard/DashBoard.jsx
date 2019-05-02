@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import Iso from '../../assets/images/logo-icon.png';
 import Logo from '../../assets/images/logo-text.png';
+import IsoBlue from '../../assets/images/logo-icon_blue.png';
 import UserDetails from '../UserDetails/UserDetails';
 import './DashBoard.css';
 
@@ -49,6 +50,9 @@ class DashBoard extends React.Component {
             </Sider>
             <Layout>
               <Header className="header">
+                <div className="logo">
+                    <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"/>
+                </div>
                 <UserDetails/>
               </Header>
               <Content style={{ margin: '24px 16px 0' }}>

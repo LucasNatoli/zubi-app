@@ -3,15 +3,12 @@
 }
 .dashboard .ant-layout-sider .logo {
     display: flex;
-    padding: 10px 10% 25px 10%;
+    padding: 17px 10% 25px 8px;
     flex: auto;
     align-items: center;
     flex-flow: row;
 }
 
-.dashboard .ant-layout-sider .logo img.logo-iso{
-    height: 44px;
-}
 .dashboard .ant-layout-sider .logo img.logo-text{
     height: 36px;
 }
@@ -21,22 +18,37 @@
 .ant-layout-sider-zero-width-trigger,
 .ant-layout-sider-zero-width-trigger:hover {
     background: #fc6a42;
+}
+.ant-layout-sider-zero-width-trigger {
     top: 11px;
 }
 
 .dashboard .header {
     padding: 0;
     display: flex;
-    justify-content: flex-end;
-    background-color: #001529;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(297,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23648cff'/%3E%3Cstop offset='1' stop-color='%23fc6a42'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='10' height='10' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23001529' cx='5' cy='5' r='5'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.15'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-size: cover;
+    justify-content: space-between;
+    padding-left: 40px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccccc+67,fc6a42+85,648cff+96 */
+background: #cccccc; /* Old browsers */
+background: -moz-linear-gradient(45deg, #cccccc 67%, #fc6a42 85%, #648cff 96%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #cccccc 67%,#fc6a42 85%,#648cff 96%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #cccccc 67%,#fc6a42 85%,#648cff 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#648cff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-
+.dashboard .header .logo {
+    display: block;
+}
+.dashboard .header .logo.hidden {
+    display: none;
+}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
+    .dashboard .header .logo {
+        display: none;
+    }
+    .dashboard .header {
+        justify-content: flex-end;
+    }
 } 
