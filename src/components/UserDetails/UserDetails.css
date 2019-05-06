@@ -1,7 +1,6 @@
 .user-details {
     display: flex;
     align-items: baseline;
-    width: 100px;
     color: #001529;
 }
 .user-details h4 {
@@ -14,7 +13,6 @@
 .user-details .ant-avatar {
     background: #ccc;
     color: #001529;
-    border: 1px solid #001529;
     width: 36px;
     height: 36px;
 }   

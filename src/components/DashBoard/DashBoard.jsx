@@ -4,9 +4,9 @@ import Logo from '../../assets/images/logo-text.png';
 import IsoBlue from '../../assets/images/iso-color-blue.svg';
 import IsoWhite from '../../assets/images/iso-color-white.svg';
 import UserDetails from '../UserDetails/UserDetails';
-//import Consulting from '../Consulting-draft/Consulting';
+import Consulting from '../Consulting-draft/Consulting';
 import './DashBoard.css';
-//import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -14,6 +14,11 @@ class DashBoard extends React.Component {
     this.state = {
       collapsed : false
     }
+  }
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
   }
   render() {
 
@@ -27,8 +32,11 @@ class DashBoard extends React.Component {
           breakpoint="lg"
           collapsedWidth="0"
           width="200"
+          trigger={null}
           onBreakpoint={(broken) => { console.log(broken); }}
           onCollapse={(collapsed) => { this.setState({collapsed: collapsed}); }}
+          collapsible
+          collapsed={this.state.collapsed}
         >
           <div className="logo">
             <img src={IsoWhite} alt="logo" className="logo-iso" />
@@ -60,12 +68,15 @@ class DashBoard extends React.Component {
         <Layout>
           <Header className="header">
              
-            <div className={this.state.collapsed ? "logo" : "logo hidden"}>
-              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso" />
+            <div className={this.state.collapsed ? "logo" : "logo open"}>
+              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+              />
             </div>
             <UserDetails />
           </Header>
-          <Content style={{ margin: '24px 16px 0' }}>
+          <Content>
             <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               <Route path="mis-consultorias" component={Consulting}/>
             </div>

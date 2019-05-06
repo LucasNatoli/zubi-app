@@ -30,22 +30,18 @@
 }
 
 .dashboard .header {
-    padding: 0;
+    padding: 0 1em 0 3em;
     display: flex;
     justify-content: space-between;
-    padding-left: 40px;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccccc+57,648cff+82 */
-background: #cccccc; /* Old browsers */
-background: -moz-linear-gradient(45deg, #cccccc 57%, #648cff 82%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg, #cccccc 57%,#648cff 82%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg, #cccccc 57%,#648cff 82%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#648cff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+background: #648cff; /* Old browsers */
 }
 .dashboard .header .logo {
     display: block;
+    visibility: visible;
 }
 .dashboard .header .logo.hidden {
-    display: none;
+    visibility: hidden;
 }
 .dashboard .header .logo .logo-iso {
     width: 36px;
@@ -57,7 +53,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', end
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .dashboard .header .logo {
-        display: none;
+        visibility: hidden;
     }
     .dashboard .header {
         justify-content: flex-end;
