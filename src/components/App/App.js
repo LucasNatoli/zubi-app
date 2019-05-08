@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { history } from '../../helpers';
 import { alertActions } from '../../actions'
@@ -28,17 +28,20 @@ class App extends React.Component {
         {alert.message &&
           <div className={`alert ${alert.type}`}>{alert.message}</div>
         }
-        <Router history={history}>
-            <PrivateRoute exact path="/" component={DashBoard} page="home"/>
-            <PrivateRoute exact path="/mis-consultorias" component={DashBoard}/>
-            <PrivateRoute exact path="/mis-capacitaciones" component={DashBoard}/>
-            <PrivateRoute exact path="/mis-citas" component={DashBoard}/>
-            
-            <PrivateRoute exact path="/editar-consultoria" component={ConsultingEditor}/>
-            
+        <BrowserRouter history={history}>
+          <Switch>
+            <PrivateRoute exact path="/" component={DashBoard} page="home" />
+            <PrivateRoute exact path="/mis-consultorias" component={DashBoard} page="consulting-list" />
+            <PrivateRoute exact path="/mis-capacitaciones" component={DashBoard} page="training-list" />
+            <PrivateRoute exact path="/mis-citas" component={DashBoard} page="dates-list" />
+            <PrivateRoute exact path="/agenda" component={DashBoard} page="agenda" />
+
+            <PrivateRoute exact path="/editar-consultoria" component={ConsultingEditor} />
+
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />
-        </Router>
+          </Switch>
+        </BrowserRouter>
       </div>
     )
   }
@@ -48,7 +51,7 @@ class App extends React.Component {
 function mapStateToProps(state) {
   const { alert } = state;
   return {
-      alert
+    alert
   };
 }
 
