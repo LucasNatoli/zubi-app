@@ -68,10 +68,9 @@ class DashBoard extends React.Component {
         <Layout>
           <Header className="header">
              
-            <div className={this.state.collapsed ? "logo" : "logo open"}>
-              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso trigger"
+            <div className={this.state.collapsed ? "trigger" : "trigger open"} onClick={this.toggle}>
+              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"
               type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
               />
             </div>
             <UserDetails />
