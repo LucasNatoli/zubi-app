@@ -1,6 +1,8 @@
 import React from 'react';
-import { Layout } from 'antd';
-import IsoBlue from '../../assets/images/logo-icon_blue.png';
+import { Layout, Menu, Icon } from 'antd';
+import Logo from '../../assets/images/logo-text.png';
+import IsoBlue from '../../assets/images/iso-color-blue.svg';
+import IsoWhite from '../../assets/images/iso-color-white.svg';
 import UserDetails from '../UserDetails/UserDetails';
 import Consulting from '../Consulting-draft/Consulting';
 import Capacitaciones from '../Capacitaciones/Capacitaciones';
@@ -18,6 +20,11 @@ class DashBoard extends React.Component {
       selectedKey: '1'
     }
   }
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
   render() {
 
     const { Header, Content, Footer} = Layout;
@@ -30,12 +37,15 @@ class DashBoard extends React.Component {
         <Layout>
           <Header className="header">
              
-            <div className={this.state.collapsed ? "logo" : "logo hidden"}>
-              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso" />
+            <div className={this.state.collapsed ? "logo" : "logo open"}>
+              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+              />
             </div>
             <UserDetails />
           </Header>
-          <Content style={{ margin: '24px 16px 0' }}>
+          <Content>
             <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
          
             {page === "consulting-list" ? <Consulting /> : ""}
@@ -46,7 +56,7 @@ class DashBoard extends React.Component {
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             Footer
-              </Footer>
+          </Footer>
         </Layout>
       </Layout>
     );

@@ -1,7 +1,6 @@
 .user-details {
     display: flex;
     align-items: baseline;
-    width: 100px;
     color: #001529;
 }
 .user-details h4 {
@@ -12,5 +11,18 @@
     vertical-align: text-bottom;
 }
 .user-details .ant-avatar {
-    background: #001529;
+    background: #ccc;
+    color: #001529;
+    width: 36px;
+    height: 36px;
 }   
+.user-details .ant-badge-count {
+    font-size: 11px;
+    height: 16px;
+    min-width: 16px;
+    line-height: 16px;
+    background: #fc6a42;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #fc6a42;
+    color: #fff;
+}

@@ -10,7 +10,9 @@ class UserDetails extends React.Component {
         return (
             <div className="user-details">
                 <span style={{ marginRight: 16 }}>
-                <Badge count={1}><Avatar shape="square" icon="user" /></Badge>
+                    <Badge count={1}>
+                        <Avatar  icon="user" />
+                    </Badge>
                 </span>
                 <Icon type="caret-down" className="caret-down"/>
             </div>
