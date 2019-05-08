@@ -9,7 +9,7 @@ class MySider extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      collapsed: false,
+      collapsed: props.collapsed,
       selectedKey: '1'
     }
   }
@@ -21,8 +21,12 @@ class MySider extends React.Component {
         breakpoint="lg"
         collapsedWidth="0"
         width="200"
+        trigger={null}
         onBreakpoint={(broken) => { console.log(broken); }}
-        onCollapse={(collapsed) => { this.setState({ collapsed: collapsed }); }}
+        onCollapse={(collapsed) => { this.setState({ collapsed: collapsed })}}
+        collapsible
+        collapsed={this.state.collapsed}
+      
       >
         <div className="logo">
           <img src={Iso} alt="Zubi-Logo" className="logo-iso" />
