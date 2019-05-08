@@ -6,7 +6,7 @@ import { alertActions } from '../../actions'
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import DashBoard from '../DashBoard/DashBoard';
-//import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
 import ConsultingEditor from '../Consulting-draft/ConsultingEditor';
 

@@ -1,15 +1,13 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import Logo from '../../assets/images/logo-text.png';
 import IsoBlue from '../../assets/images/iso-color-blue.svg';
-import IsoWhite from '../../assets/images/iso-color-white.svg';
 import UserDetails from '../UserDetails/UserDetails';
 import Consulting from '../Consulting-draft/Consulting';
 import Capacitaciones from '../Capacitaciones/Capacitaciones';
 import Agenda from '../Agenda/Agenda'
 import './DashBoard.css';
 import MySider from './MySider'
-
+import Home from './Home'
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -48,9 +46,10 @@ class DashBoard extends React.Component {
           <Content>
             <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
          
+            {page === "home" ? <Home /> : ""}
             {page === "consulting-list" ? <Consulting /> : ""}
             {page === "training-list" ? <Capacitaciones /> : ""}
-            {page === "training-list" ? <Capacitaciones /> : ""}
+            {page === "agenda" ? <Agenda /> : ""}
             
             </div>
           </Content>

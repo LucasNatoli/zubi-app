@@ -30,25 +30,26 @@ class MySider extends React.Component {
         </div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={this.state.selectedKey}>
           <Menu.Item key="1">
-            <Icon type="user" />
-
-            <Link href="#" to="/" title="DashBoard">DashBoard</Link>
-
+            <Link className="nav-text" href="#" to="/" title="DashBoard">
+              <Icon type="user" />DashBoard</Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="video-camera" />
-            <Link className="nav-text" href="/mis-consultorias" to="/mis-consultorias" title="Mis Consultorias">Consultorias</Link>
+            <Link className="nav-text" href="/mis-consultorias" to="/mis-consultorias" title="Mis Consultorias">
+              <Icon type="video-camera" />
+              Consultorias</Link>
           </Menu.Item>
           <Menu.Item key="3">
             <Link className="nav-text" href="/mis-capacitaciones" to="/mis-capacitaciones" title="Mis Capacitaciones">
               <Icon type="upload" />
               <span className="nav-text">Capacitaciones</span>
             </Link>
-            
+
           </Menu.Item>
           <Menu.Item key="4">
-            <Icon type="user" />
-            <span className="nav-text">Agenda</span>
+            <Link className="nav-text" href="/agenda" to="/agenda" title="Agenda">
+              <Icon type="user" />
+              Agenda
+            </Link>
           </Menu.Item>
           <Menu.Item key="5">
             <Icon type="user" />
