@@ -49,7 +49,7 @@ class RegisterPage extends React.Component {
         const { registering  } = this.props;
         const { user, submitted } = this.state;
         return (
-            <Card>
+            <Card className="register-card">
                 <h2>Crear Cuenta</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group mb-1' + (submitted && !user.firstName ? ' has-error' : '')}>

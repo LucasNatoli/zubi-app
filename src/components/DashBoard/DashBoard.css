@@ -3,7 +3,7 @@
 }
 .dashboard .ant-layout-sider .logo {
     display: flex;
-    padding: 17px 10% 25px 10%;
+    padding: 10px 10% 25px 10%;
     flex: auto;
     align-items: center;
     flex-flow: row;
@@ -15,7 +15,7 @@
     margin-right: 10px;
 }
 .dashboard .ant-layout-sider .logo img.logo-text{
-    height: 36px;
+    height: 32px;
 }
 
 .ant-menu.ant-menu-dark .ant-menu-item-selected,
@@ -25,34 +25,40 @@
     background: #fc6a42;
 }
 
-.ant-layout-sider-zero-width-trigger {
-    top: 11px;
-}
-
-.dashboard .header {
-    padding: 0 1em 0 3em;
+.dashboard .header.ant-layout-header {
+    padding: 0 1em 0 0;
     display: flex;
     justify-content: space-between;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccccc+57,648cff+82 */
-background: #648cff; /* Old browsers */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccccc+57,648cff+82 */
+    background: #648cff; /* Old browsers */
+    line-height: 54px;
+    height: 54px;
 }
-.dashboard .header .logo {
+.dashboard .header .trigger {
     display: block;
     visibility: visible;
+    background: #fc6a42;
+    width: 44px;
+    height: 44px;
+    line-height: 42px;
+    margin-top: 5px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
 }
-.dashboard .header .logo.hidden {
+.dashboard .header .trigger.open img{
     visibility: hidden;
 }
-.dashboard .header .logo .logo-iso {
+.dashboard .header .trigger .logo-iso {
     width: 36px;
     height: 36px;
-    margin-left: 8px;
-    color: #001529;
+    margin: 5px auto;
+    display: block;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .dashboard .header .logo {
+    .dashboard .header .trigger {
         visibility: hidden;
     }
     .dashboard .header {

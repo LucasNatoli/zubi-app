@@ -58,4 +58,8 @@ body {
       color: #fff;
       background-color: #fc6a42;
   }
+  .login-card, .register-card {
+    width: 360px;
+    margin: 40px auto;
+  }
 
