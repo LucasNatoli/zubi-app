@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
-import TabContainer from "react-bootstrap/TabContainer";
-import TabContent from "react-bootstrap/TabContent";
-import TabPane from "react-bootstrap/TabPane";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import ListGroup from "react-bootstrap/ListGroup";
-import ListGroupItem from "react-bootstrap/ListGroupItem";
-import Button from 'react-bootstrap/Button';
+import {Anchor, Button, Col, Layout, Row, Tabs} from 'antd';
 import Pagina1 from './Pagina1';
 import Pagina3 from './Pagina3';
 import Pagina6 from './Pagina6';
-import Container from 'react-bootstrap/Container';
 
 class WizardConsultoria extends Component {
   render() {
+		const {Link} = Anchor
+		const TabPane = Tabs.TabPane;
     return (
-			<Container fluid>
-				<TabContainer id="list-group-tabs-example" defaultActiveKey="#llega_a_tus_estudiantes">
+			<Layout>
+				<Tabs>
+					<TabPane tab="Llega a tus estudiantes"><Pagina1 /></TabPane>
+					<TabPane tab="Grabación y edición"><Pagina3 /></TabPane>
+					<TabPane tab="Página de inicio"><Pagina6 /></TabPane>
+					<TabPane tab="Precios y Cupones">Blank</TabPane>
+				</Tabs>
+{/* 				<TabContainer id="list-group-tabs-example" defaultActiveKey="#llega_a_tus_estudiantes">
 					<Row>
 						<Col sm={3}>
-							<ListGroup variant="flush">
+							<Anchor variant="flush">
 								<h5 style={{marginTop: 20}}>Crea tu Consultoría</h5>		
-								<ListGroupItem style={ListGroupItemStyle} action href="#llega_a_tus_estudiantes">Llega a tus estudiantes</ListGroupItem>
-								<ListGroupItem style={ListGroupItemStyle} action href="#grabacion_y_edicion">Grabación y edición</ListGroupItem>
-								<ListGroupItem style={ListGroupItemStyle} action href="#pagina_de_inicio">Página de inicio</ListGroupItem>
-								<ListGroupItem style={ListGroupItemStyle} action href="#precios_y_cupones">Precios y Cupones</ListGroupItem>
-							</ListGroup>
-							<Button variant="danger">Enviar para revisión</Button>
+								<Link style={ListGroupItemStyle} action href="#llega_a_tus_estudiantes">Llega a tus estudiantes</Link>
+								<Link style={ListGroupItemStyle} action href="#grabacion_y_edicion">Grabación y edición</Link>
+								<Link style={ListGroupItemStyle} action href="#pagina_de_inicio">Página de inicio</Link>
+								<Link style={ListGroupItemStyle} action href="#precios_y_cupones">Precios y Cupones</Link>
+							</Anchor>
+							<Button type="danger">Enviar para revisión</Button>
 						</Col>
 						<Col sm={9}>
 							<TabContent style={{marginTop: 30}}>
@@ -52,7 +52,8 @@ class WizardConsultoria extends Component {
 						</Col>
 					</Row>
 				</TabContainer>
-			</Container>
+ */}
+			</Layout>
 		);
   }
 }

@@ -4,16 +4,16 @@ import ConsultingList from './ConsultingList'
 
 const data = [
   {
-    title: 'Consultoria 1',
+    post_title: 'Consultoria 1',
   },
   {
-    title: 'Consultoria 2',
+    post_title: 'Consultoria 2',
   },
   {
-    title: 'Consultoria 3',
+    post_title: 'Consultoria 3',
   },
   {
-    title: 'Consultoria 4',
+    post_title: 'Consultoria 4',
   },
 ];
 
@@ -22,7 +22,7 @@ class Consulting extends React.Component {
     return (
       <div>
         <h1>Consulting</h1>
-        <ConsultingList></ConsultingList>
+        <ConsultingList consulting={data}></ConsultingList>
       </div>
     )}      
   }
