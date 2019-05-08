@@ -1,7 +1,7 @@
 import { authHeader } from '../helpers';
 
 const config = {
-  apiUrl : 'http://bigos.lan/wp-json/wp-react/v2'
+  apiUrl : 'http://zubi.com.ar/wp-json/wp-react/v2'
 }
 
 export const zubiService = {
