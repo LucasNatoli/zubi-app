@@ -1,16 +1,12 @@
 import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
-import Iso from '../../assets/images/logo-icon.png';
-import Logo from '../../assets/images/logo-text.png';
+import { Layout } from 'antd';
 import IsoBlue from '../../assets/images/logo-icon_blue.png';
 import UserDetails from '../UserDetails/UserDetails';
 import Consulting from '../Consulting-draft/Consulting';
 import Capacitaciones from '../Capacitaciones/Capacitaciones';
 import Agenda from '../Agenda/Agenda'
 import './DashBoard.css';
-import { Route } from 'react-router-dom';
-import { Anchor } from 'antd';
-import MySider from './MySiderbar'
+import MySider from './MySider'
 
 
 class DashBoard extends React.Component {
@@ -24,11 +20,9 @@ class DashBoard extends React.Component {
   }
   render() {
 
-    const {
-      Header, Content, Footer, Sider,
-    } = Layout;
+    const { Header, Content, Footer} = Layout;
     const page = this.props.page
-    console.log("rendering", this.props.page)
+
     return (
       <Layout className="dashboard">
         <MySider></MySider>
@@ -44,8 +38,9 @@ class DashBoard extends React.Component {
           <Content style={{ margin: '24px 16px 0' }}>
             <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
          
-            {page == "consulting-list" ? <Consulting /> : ""}
-            {page == "training-list" ? <Capacitaciones /> : ""}
+            {page === "consulting-list" ? <Consulting /> : ""}
+            {page === "training-list" ? <Capacitaciones /> : ""}
+            {page === "training-list" ? <Capacitaciones /> : ""}
             
             </div>
           </Content>
