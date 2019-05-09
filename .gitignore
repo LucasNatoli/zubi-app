@@ -2,6 +2,7 @@
 
 # dev temp
 /src/components/Consultoria
+/src/components/WizardConsultoria
 
 # dependencies
 /node_modules

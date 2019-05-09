@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import {Alert, Button, Card, Col, Layout, Row} from 'antd';
 
 class Pagina3 extends Component {
   render() {
     return (
-      <Container>
+      <Layout>
         <h3>Configuración y vídeo de prueba</h3>
-        <Jumbotron>
+        <Alert type="info">
           <Row>
             <Col>
               <h5>Arregla tu estudio ideal y obtén los primeros comentarios</h5>
               <p>Es importante que configures correctamente el vídeo y el audio ahora, ya que es mucho más difícil modificar tus vídeos después de grabarlos. Hay muchas formas creativas de utilizar lo que tienes para crear un vídeo con aspecto profesional.</p>
             </Col>
             <Col>
-              <Card>
-                <Card.Body>
-                  <Card.Title>Ayuda profesional gratuita en vídeo</Card.Title>
-                  
-                  <Card.Text>Obtén ayuda personalizada para tu audio y vídeo</Card.Text>
+              <Card title="Ayuda profesional gratuita en vídeo">
+                Obtén ayuda personalizada para tu audio y vídeo
                   <Button variant="outline-info">Crear un video de prueba</Button>
-                </Card.Body>
               </Card>
             </Col>
           </Row>
-        </Jumbotron>
+        </Alert>
         <h5>Consejos</h5>
         <h6>Es fácil hacerte con el equipo.</h6>
         <p>No tienes por qué complicarte comprando equipo. La mayoría de las cámaras de smartphones pueden grabar vídeo en calidad HD, y puedes grabar el audio con otro teléfono o micrófono externo.</p>
@@ -54,7 +45,7 @@ class Pagina3 extends Component {
           <li>El audio debería salir de los canales derecho e izquiero y estar sincronizado con el vídeo</li>
           <li>El audio no debe tener eco ni ruido de fondo, pues puede resultar una distracción para los estudiantes</li>
         </ul>
-  </Container>
+  </Layout>
     )
   }
 }

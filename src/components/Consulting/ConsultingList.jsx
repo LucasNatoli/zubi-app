@@ -1,18 +1,21 @@
 import React from 'react'
 import { List, Avatar } from 'antd'
+import { Link } from 'react-router-dom'
 
 const ConsultingList = ({ consulting, onConsultancyClick }) => (
   <List
       itemLayout="horizontal"
       dataSource={consulting}
       renderItem={cons => (
+        <Link href="/editar-consultoria" to="editar-consultoria">
         <List.Item  key={cons.id}  onClick={() => onConsultancyClick(cons.id)} {...cons}>
           <List.Item.Meta
             avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-            title={<a href="http://localhost:3000/editar-consultoria">{cons.post_title}</a>}
-            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+            title={cons.post_title}
+            description={cons.post_content}
           />
         </List.Item>
+        </Link>
       )}
     />
 )

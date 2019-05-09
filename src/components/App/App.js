@@ -8,7 +8,7 @@ import { RegisterPage } from '../RegisterPage';
 import DashBoard from '../DashBoard/DashBoard';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
-import ConsultingEditor from '../Consulting-draft/ConsultingEditor';
+import ConsultingEditor from '../Consulting/ConsultingEditor'
 
 class App extends React.Component {
   constructor(props) {
