@@ -27,7 +27,7 @@ class DashBoard extends React.Component {
   }
   render() {
 
-    const { Header, Content, Footer, Sider } = Layout;
+    const { Content, Header, Sider } = Layout;
     const page = this.props.page
 
     return (
@@ -98,9 +98,6 @@ class DashBoard extends React.Component {
 
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            Footer
-          </Footer>
         </Layout>
       </Layout>
     );
