@@ -31,7 +31,7 @@ class Capacitaciones extends React.Component {
             <List.Item key={item.id}>
               <List.Item.Meta
                 avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title={<a href="http://localhost:3000/editar-capacitacion/${item.id}">{item.title}</a>}
+                title={<a href="http://localhost:3000/editar-capacitacion/">{item.title}</a>}
                 description="Ant Design, a design language for background applications, is refined by Ant UED Team"
               />
             </List.Item>
