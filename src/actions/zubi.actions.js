@@ -9,13 +9,13 @@ export const zubiActions = {
 
 function getMisConsultorias() {
   return dispatch => {
-      dispatch(request());
+    dispatch(request());
 
-      zubiService.fetchConsultorias()
-          .then(
-              consulting => dispatch(success(consulting)),
-              error => dispatch(failure(error.toString()))
-          );
+    zubiService.fetchConsultorias()
+      .then(
+        consulting => dispatch(success(consulting)),
+        error => dispatch(failure(error.toString()))
+      );
   };
 
   function request() { return { type: zubiConstants.ZUBI_GETALL_CONS_REQUEST } }
@@ -25,13 +25,13 @@ function getMisConsultorias() {
 
 function getMisCapacitaciones() {
   return dispatch => {
-      dispatch(request());
+    dispatch(request());
 
-      zubiService.misCapacitaciones()
-          .then(
-              capacitaciones => dispatch(success(capacitaciones)),
-              error => dispatch(failure(error.toString()))
-          );
+    zubiService.misCapacitaciones()
+      .then(
+        capacitaciones => dispatch(success(capacitaciones)),
+        error => dispatch(failure(error.toString()))
+      );
   };
 
   function request() { return { type: zubiConstants.ZUBI_GETALL_CAP_REQUEST } }
@@ -39,9 +39,9 @@ function getMisCapacitaciones() {
   function failure(error) { return { type: zubiConstants.ZUBI_GETALL_CAP_FAILURE, error } }
 }
 
-function filterVisibleConsulting (filter) {
-    return {
-      type: zubiConstants.ZUBI_SET_VISIBLE_CONS,
-      filter
-    }
+function filterVisibleConsulting(filter) {
+  return {
+    type: zubiConstants.ZUBI_SET_VISIBLE_CONS,
+    filter
+  }
 }
