@@ -5,7 +5,7 @@ import Logo from '../../assets/images/logo-text.png';
 import { Link } from 'react-router-dom';
 import IsoBlue from '../../assets/images/iso-color-blue.svg';
 import UserDetails from '../UserDetails/UserDetails';
-import Consulting from '../Consulting-draft/Consulting';
+import Consulting from '../Consulting/Consulting';
 import Capacitaciones from '../Capacitaciones/Capacitaciones';
 import Agenda from '../Agenda/Agenda'
 import './DashBoard.css';

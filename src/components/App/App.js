@@ -8,7 +8,7 @@ import { RegisterPage } from '../RegisterPage';
 import DashBoard from '../DashBoard/DashBoard';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
-import WizardConsultoria from '../WizardConsultoria/WizardConsultoria';
+import ConsultingEditor from '../Consulting/ConsultingEditor'
 
 class App extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class App extends React.Component {
             <PrivateRoute exact path="/mis-citas" component={DashBoard} page="dates-list" />
             <PrivateRoute exact path="/agenda" component={DashBoard} page="agenda" />
 
-            <PrivateRoute exact path="/editar-consultoria" component={WizardConsultoria} />
+            <PrivateRoute exact path="/editar-consultoria" component={ConsultingEditor} />
 
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />

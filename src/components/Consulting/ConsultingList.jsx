@@ -7,6 +7,7 @@ const ConsultingList = ({ consulting, onConsultancyClick }) => (
       itemLayout="horizontal"
       dataSource={consulting}
       renderItem={cons => (
+        <Link href="/editar-consultoria" to="editar-consultoria">
         <List.Item  key={cons.id}  onClick={() => onConsultancyClick(cons.id)} {...cons}>
           <List.Item.Meta
             avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
@@ -14,6 +15,7 @@ const ConsultingList = ({ consulting, onConsultancyClick }) => (
             description={cons.post_content}
           />
         </List.Item>
+        </Link>
       )}
     />
 )
