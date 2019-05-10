@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Layout, Typography, TimePicker } from 'antd'
+import { Button, Layout, Typography } from 'antd'
 import DaytimeForm from './DaytimeForm'
 
 class Agenda extends React.Component {

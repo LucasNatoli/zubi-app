@@ -2,14 +2,7 @@ import React from 'react'
 import { Checkbox, Col, Form, TimePicker, Row } from 'antd'
 import moment from 'moment'
 
-const DaytimeItem = () => {
-
-}
 export default class DaytimeForm extends React.Component {
-
-  constructor(props) {
-    super(props)
-  }
 
   handleSubmit(e) {
     e.preventDefault()
