@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-import Iso from '../../assets/images/logo-icon.png';
+import Iso from '../../assets/images/iso-color-white.svg';
 import Logo from '../../assets/images/logo-text.png';
 import { Link } from 'react-router-dom';
 import IsoBlue from '../../assets/images/iso-color-blue.svg';
@@ -9,14 +9,14 @@ import Consulting from '../Consulting-draft/Consulting';
 import Capacitaciones from '../Capacitaciones/Capacitaciones';
 import Agenda from '../Agenda/Agenda'
 import './DashBoard.css';
-import Home from './Home'
+import HomePage from '../HomePage/HomePage'
 
 class DashBoard extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      collapsed: false,
+      collapsed: true,
       selectedKey: '1'
     }
   }
@@ -27,7 +27,7 @@ class DashBoard extends React.Component {
   }
   render() {
 
-    const { Header, Content, Footer, Sider } = Layout;
+    const { Header, Content, Sider } = Layout;
     const page = this.props.page
 
     return (
@@ -42,7 +42,6 @@ class DashBoard extends React.Component {
           onCollapse={(collapsed) => { this.setState({ collapsed: collapsed }) }}
           collapsible
           collapsed={this.state.collapsed}
-
         >
           <div className="logo">
             <img src={Iso} alt="Zubi-Logo" className="logo-iso" />
@@ -82,25 +81,21 @@ class DashBoard extends React.Component {
           <Header className="header">
 
             <div className={this.state.collapsed ? "trigger" : "trigger open"} onClick={this.toggle}>
-              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"
-                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              />
+              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"/>
+              <Icon type="left" />
             </div>
             <UserDetails />
           </Header>
           <Content>
             <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
 
-              {page === "home" ? <Home /> : ""}
+              {page === "home" ? <HomePage /> : ""}
               {page === "consulting-list" ? <Consulting /> : ""}
               {page === "training-list" ? <Capacitaciones /> : ""}
               {page === "agenda" ? <Agenda /> : ""}
 
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            Footer
-          </Footer>
         </Layout>
       </Layout>
     );

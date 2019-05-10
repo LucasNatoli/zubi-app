@@ -36,7 +36,7 @@
 }
 .dashboard .header .trigger {
     display: block;
-    visibility: visible;
+    display: block;
     background: #fc6a42;
     width: 44px;
     height: 44px;
@@ -46,9 +46,19 @@
     border-bottom-right-radius: 4px;
     cursor: pointer;
 }
-.dashboard .header .trigger.open img{
-    visibility: hidden;
+.dashboard .header .trigger.open {
+    width: 32px;
 }
+.dashboard .header .trigger.open img{
+    display: none;
+}
+.dashboard .header .trigger .anticon {
+    display: block;
+    line-height: 46px;
+    font-size: 16px;
+    color: #fff;
+}
+
 .dashboard .header .trigger .logo-iso {
     width: 36px;
     height: 36px;

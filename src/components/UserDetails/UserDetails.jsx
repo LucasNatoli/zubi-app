@@ -14,7 +14,6 @@ class UserDetails extends React.Component {
                         <Avatar  icon="user" />
                     </Badge>
                 </span>
-                <Icon type="caret-down" className="caret-down"/>
             </div>
         );
     }
