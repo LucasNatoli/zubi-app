@@ -10,14 +10,14 @@ import Capacitaciones from '../Capacitaciones/Capacitaciones'
 import Citas from '../Citas/Citas'
 import Agenda from '../Agenda/Agenda'
 import './DashBoard.css';
-import Home from './Home'
+import HomePage from '../HomePage/HomePage'
 
 class DashBoard extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      collapsed: false,
+      collapsed: true,
       selectedKey: '1'
     }
   }
@@ -27,6 +27,7 @@ class DashBoard extends React.Component {
     });
   }
   render() {
+
 
     const { Content, Header, Sider } = Layout;
     const page = this.props.page
@@ -43,7 +44,6 @@ class DashBoard extends React.Component {
           onCollapse={(collapsed) => { this.setState({ collapsed: collapsed }) }}
           collapsible
           collapsed={this.state.collapsed}
-
         >
           <div className="logo">
             <img src={Iso} alt="Zubi-Logo" className="logo-iso" />
@@ -84,16 +84,15 @@ class DashBoard extends React.Component {
           <Header className="header">
 
             <div className={this.state.collapsed ? "trigger" : "trigger open"} onClick={this.toggle}>
-              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"
-                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              />
+              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"/>
+              <Icon type="left" />
             </div>
             <UserDetails />
           </Header>
           <Content>
             <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
 
-              {page === "home" ? <Home /> : ""}
+              {page === "home" ? <HomePage /> : ""}
               {page === "consulting-list" ? <Consulting /> : ""}
               {page === "training-list" ? <Capacitaciones /> : ""}
               {page === "agenda" ? <Agenda /> : ""}
