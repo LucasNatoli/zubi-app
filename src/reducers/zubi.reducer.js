@@ -25,13 +25,7 @@ export function consulting(state={
 }
 
 
-export function zubi(state={
-
-//aca pongo un estado incial parcial, por ej el loading
-
-
-
-}, action){
+export function zubi(state={}, action){
   switch (action.type) {
 
     case zubiConstants.ZUBI_GETALL_CONS_FAILURE:

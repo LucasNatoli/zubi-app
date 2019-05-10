@@ -1,12 +1,13 @@
-import React from 'react';
-import { Layout, Menu, Icon } from 'antd';
-import Iso from '../../assets/images/iso-color-white.svg';
-import Logo from '../../assets/images/logo-text.png';
-import { Link } from 'react-router-dom';
-import IsoBlue from '../../assets/images/iso-color-blue.svg';
-import UserDetails from '../UserDetails/UserDetails';
-import Consulting from '../Consulting-draft/Consulting';
-import Capacitaciones from '../Capacitaciones/Capacitaciones';
+import React from 'react'
+import { Layout, Menu, Icon } from 'antd'
+import Iso from '../../assets/images/logo-icon.png'
+import Logo from '../../assets/images/logo-text.png'
+import { Link } from 'react-router-dom'
+import IsoBlue from '../../assets/images/iso-color-blue.svg'
+import UserDetails from '../UserDetails/UserDetails'
+import Consulting from '../Consulting/Consulting'
+import Capacitaciones from '../Capacitaciones/Capacitaciones'
+import Citas from '../Citas/Citas'
 import Agenda from '../Agenda/Agenda'
 import './DashBoard.css';
 import HomePage from '../HomePage/HomePage'
@@ -27,7 +28,8 @@ class DashBoard extends React.Component {
   }
   render() {
 
-    const { Header, Content, Sider } = Layout;
+
+    const { Content, Header, Sider } = Layout;
     const page = this.props.page
 
     return (
@@ -62,7 +64,6 @@ class DashBoard extends React.Component {
                 <Icon type="upload" />
                 <span className="nav-text">Capacitaciones</span>
               </Link>
-
             </Menu.Item>
             <Menu.Item key="4">
               <Link className="nav-text" href="/agenda" to="/agenda" title="Agenda">
@@ -71,8 +72,10 @@ class DashBoard extends React.Component {
             </Link>
             </Menu.Item>
             <Menu.Item key="5">
-              <Icon type="user" />
-              <span className="nav-text">Cerrar Session</span>
+              <Link className="nav-text" href="/mis-citas" to="/mis-citas" title="Citas">
+                <Icon type="user" />
+                <span className="nav-text">Citas</span>
+              </Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -93,6 +96,7 @@ class DashBoard extends React.Component {
               {page === "consulting-list" ? <Consulting /> : ""}
               {page === "training-list" ? <Capacitaciones /> : ""}
               {page === "agenda" ? <Agenda /> : ""}
+              {page === "mis-citas" ? <Citas /> : ""}
 
             </div>
           </Content>
