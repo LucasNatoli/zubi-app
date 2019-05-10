@@ -1,5 +1,6 @@
 import React from 'react'
 import { Alert, Anchor, Avatar, Button, Card, Col, Form, Icon, Input, Layout, Row, Tabs, Upload } from 'antd';
+import UploadJpg from '../UploadJpg'
 
 export default class extends React.Component {
   render() {
@@ -9,18 +10,11 @@ export default class extends React.Component {
     return (
       <Layout>
         <Header className="header">
-
-          {/* <div className={this.state.collapsed ? "trigger" : "trigger open"} onClick={this.toggle}>
-            <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-            />
-          </div>
-          <UserDetails /> */}
           <Button type="secondary">Volver al escritorio</Button>
           <Button type="primary">Guardar</Button>
         </Header>
         <Content>
-          <Tabs defaultActiveKey="1" tabPosition="left" style={{marginTop:25}}>
+          <Tabs defaultActiveKey="1" tabPosition="left" style={{ marginTop: 25 }}>
             <TabPane tab="Llega a tus estudiantes" key="1"><h3>Llega a tus estudiantes</h3>
               <hr></hr>
               <p>Las descripciones que escribas aquí ayudará a los estudiantes a decidir si tu curso es el adecuado para ellos.</p>
@@ -88,6 +82,12 @@ export default class extends React.Component {
                 <h4>Categoría de la consultoría</h4>
                 <Input type="text" name="categoria_de_la_consultoría" placeholder="Inserta la descripción de tu consultoría." maxLength="144" />
                 <h4>Imagen de la consultoría</h4>
+                <p>Haz que tu consultoría destaque con una atractiva imagen de nuestro equipo de diseño basada en tus preferencias y estilo. Consigue tu imagen gratis.</p>
+                <p>Si creas la imagen por tu cuenta, tendrá que cumplir los estándares de calidad que deben cumplir las imágenes de los consultorías para que la aceptemos.</p>
+                <p>Directrices importantes: 750 x 422 píxeles, formato .jpg, .jpeg, .gif, o .png y sin texto en la imagen.</p>
+
+                <UploadJpg />
+
                 {/*                 <Row>
                   <Col sm={1} md={6}>
                     <img
@@ -98,9 +98,6 @@ export default class extends React.Component {
                     />
                   </Col>
                   <Col sm={1} md={6}>
-                    <p>Haz que tu consultoría destaque con una atractiva imagen de nuestro equipo de diseño basada en tus preferencias y estilo. Consigue tu imagen gratis.</p>
-                    <p>Si creas la imagen por tu cuenta, tendrá que cumplir los estándares de calidad que deben cumplir las imágenes de los consultorías para que la aceptemos.</p>
-                    <p>Directrices importantes: 750 x 422 píxeles, formato .jpg, .jpeg, .gif, o .png y sin texto en la imagen.</p>
                     <Upload className="mb-3">
                       <Input
                         placeholder="No has seleccionado un archivo"
@@ -116,24 +113,8 @@ export default class extends React.Component {
 
 
                 <h4>Video Promocional</h4>
-                {/*  <Row>
-                  <Col sm={1} md={6}>
-                    <img
-                      style={{ width: '100%', height: 'auto' }}
-                      className="mr-3"
-                      src="/subi_tu_foto.png"
-                      alt="Subi tu foto"
-                    />
-                  </Col>
-                  <Col>
-                    <p>Los estudiantes que ven un vídeo promocional bien hecho tienen 5 veces más probabilidades de matricularse en tu consultoría. Esa estadística se multiplica por 10 si los vídeos son excepcionalmente buenos. Aprende a hacer los tuyos impresionantes.</p>
-                    <Upload className="mb-3">
-                      <Button>
-                        <Icon type="upload">Subir imagen</Icon>
-                      </Button>
-                    </Upload>
-                  </Col>
-                </Row> */}
+                <p>Los estudiantes que ven un vídeo promocional bien hecho tienen 5 veces más probabilidades de matricularse en tu consultoría. Esa estadística se multiplica por 10 si los vídeos son excepcionalmente buenos. Aprende a hacer los tuyos impresionantes.</p>
+                    
 
 
               </Form>
