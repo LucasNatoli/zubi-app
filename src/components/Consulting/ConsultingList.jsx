@@ -13,6 +13,11 @@ const ConsultingList = ({ consulting, onConsultancyClick }) => (
             avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
             title={cons.post_title}
             description={cons.post_content}
+            extra={
+              <div class="image-placeholder">
+                  <h4>image placeholder text</h4>
+              </div>
+            }
           />
         </List.Item>
         </Link>

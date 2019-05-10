@@ -1,14 +1,13 @@
 import React from 'react'
 import { Layout, Menu, Icon } from 'antd'
-import Iso from '../../assets/images/logo-icon.png'
-import Logo from '../../assets/images/logo-text.png'
 import { Link } from 'react-router-dom'
-import IsoBlue from '../../assets/images/iso-color-blue.svg'
 import UserDetails from '../UserDetails/UserDetails'
 import Consulting from '../Consulting/Consulting'
 import Capacitaciones from '../Capacitaciones/Capacitaciones'
 import Citas from '../Citas/Citas'
 import Agenda from '../Agenda/Agenda'
+import Logo from '../../assets/images/logo-text.png'
+import Iso from '../../assets/images/iso.svg'
 import './DashBoard.css';
 import HomePage from '../HomePage/HomePage'
 
@@ -34,7 +33,6 @@ class DashBoard extends React.Component {
 
     return (
       <Layout className="dashboard">
-
         <Sider
           breakpoint="lg"
           collapsedWidth="0"
@@ -46,7 +44,7 @@ class DashBoard extends React.Component {
           collapsed={this.state.collapsed}
         >
           <div className="logo">
-            <img src={Iso} alt="Zubi-Logo" className="logo-iso" />
+            <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
             <img src={Logo} alt="Zubi-Logo" className="logo-text" />
           </div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={this.state.selectedKey}>
@@ -82,15 +80,14 @@ class DashBoard extends React.Component {
 
         <Layout>
           <Header className="header">
-
-            <div className={this.state.collapsed ? "trigger" : "trigger open"} onClick={this.toggle}>
-              <img src={IsoBlue} alt="Zubi-Logo" className="logo-iso"/>
+            <div className={this.state.collapsed ? "trigger shadow" : "trigger shadow open"} onClick={this.toggle}>
+              <img src={Iso} alt="Zubi-Logo" className="logo-iso"/>
               <Icon type="left" />
             </div>
             <UserDetails />
           </Header>
           <Content>
-            <div className="content" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+            <div className="content">
 
               {page === "home" ? <HomePage /> : ""}
               {page === "consulting-list" ? <Consulting /> : ""}

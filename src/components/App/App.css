@@ -63,3 +63,9 @@ body {
     margin: 40px auto;
   }
 
+  .shadow {
+    -moz-box-shadow:    1px 1px 3px 0px #648cff;
+    -webkit-box-shadow: 1px 1px 3px 0px #648cff;
+    box-shadow:         1px 1px 3px 0px #648cff;
+ }
+
