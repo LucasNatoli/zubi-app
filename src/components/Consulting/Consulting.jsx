@@ -39,7 +39,6 @@ class Consulting extends React.Component {
   render() {
     return (
       <div>
-        <h1>Consulting</h1>
         <ConsultingList consulting={data} onConsultancyClick={this.onConsultancyClick}></ConsultingList>
       </div>
     )}      
