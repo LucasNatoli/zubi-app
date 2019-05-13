@@ -12,15 +12,13 @@ class UserDetails extends React.Component {
     render() {
           
         return (
-        <Popover placement="bottomRight" content={content} trigger="hover">
             <div className="user-details">
-                <span style={{ marginRight: 16 }}>
+                <Popover placement="topRight" content={content} trigger="hover">
                     <Badge count={1}>
                         <Avatar  icon="user" />
                     </Badge>
-                </span>
+                </Popover>
             </div>
-        </Popover>
         );
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Avatar } from 'antd'
+import { List, Icon } from 'antd'
 
 const NotificationsList = ({ notification, onNotificationClick }) => (
   <List
@@ -8,14 +8,9 @@ const NotificationsList = ({ notification, onNotificationClick }) => (
       renderItem={noti => (
         <List.Item  key={noti.id}  onClick={() => onNotificationClick(noti.id)} {...noti}>
           <List.Item.Meta
-            avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+            avatar={<Icon type={noti.post_type} style={{fontSize: '24px', color: '#648cff'}}/>}
             title={noti.post_title}
             description={noti.post_content}
-            extra={
-              <div class="image-placeholder">
-                  <h4>image placeholder text</h4>
-              </div>
-            }
           />
         </List.Item>
       )}
