@@ -1,6 +1,7 @@
 import React from 'react'
 import { Alert, Anchor, Avatar, Button, Card, Col, Form, Icon, Input, Layout, Row, Tabs, Upload } from 'antd';
 import UploadJpg from '../UploadJpg'
+import './Consulting.css'
 
 export default class extends React.Component {
   render() {
@@ -8,22 +9,25 @@ export default class extends React.Component {
     const { Link } = Anchor
     const TabPane = Tabs.TabPane;
     return (
-      <Layout>
+      <Layout className="inner-layout">
         <Header className="header">
-          <Button type="secondary">Volver al escritorio</Button>
+          <Button type="secondary"><Icon type="arrow-left" />Volver al escritorio</Button>
           <Button type="primary">Guardar</Button>
         </Header>
         <Content>
-          <Tabs defaultActiveKey="1" tabPosition="left" style={{ marginTop: 25 }}>
-            <TabPane tab="Llega a tus estudiantes" key="1"><h3>Llega a tus estudiantes</h3>
+          <Tabs defaultActiveKey="1" tabPosition="left" style={{ marginTop: '2em'}}>
+            <TabPane tab="Llega a tus estudiantes" key="1" style={{ margin: '0 2em'}} className="panel">
+              <h3 className="title">Llega a tus estudiantes</h3>
               <hr></hr>
               <p>Las descripciones que escribas aquí ayudará a los estudiantes a decidir si tu curso es el adecuado para ellos.</p>
-              <p>¿Qué aprenderán los estudiantes en tu custo?</p>
-              <Input type="text" name="respuesta_1" placeholder="Ejemplo: Crear un modelo de negocios" />
-              <p>¿Hay requisitos para crear un curso?</p>
-              <Input type="text" name="respuesta_1" placeholder="Ejemplo: Crear un modelo de negocios" />
-              <p>¿Quiénes son tus estudiantes objetivo?</p>
-              <Input type="text" name="respuesta_1" placeholder="Ejemplo: Crear un modelo de negocios" />
+              <div className="content">
+                <p>¿Qué aprenderán los estudiantes en tu curso?</p>
+                <Input type="text" name="respuesta_1" placeholder="Ejemplo: Crear un modelo de negocios" />
+                <p>¿Hay requisitos para crear un curso?</p>
+                <Input type="text" name="respuesta_1" placeholder="Ejemplo: Crear un modelo de negocios" />
+                <p>¿Quiénes son tus estudiantes objetivo?</p>
+                <Input type="text" name="respuesta_1" placeholder="Ejemplo: Crear un modelo de negocios" />
+              </div>
             </TabPane>
 
 

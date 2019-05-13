@@ -1,19 +1,23 @@
 import React from 'react';
-
-import { Badge, Avatar, Icon } from 'antd';
+import { Badge, Avatar, Popover } from 'antd';
+import UserMenu from '../UserMenu/UserMenu'
 import './UserDetails.css';
 
+const content = (
+    <UserMenu />
+  );
+  
 class UserDetails extends React.Component {
 
     render() {
           
         return (
             <div className="user-details">
-                <span style={{ marginRight: 16 }}>
+                <Popover placement="topRight" content={content} trigger="hover">
                     <Badge count={1}>
                         <Avatar  icon="user" />
                     </Badge>
-                </span>
+                </Popover>
             </div>
         );
     }

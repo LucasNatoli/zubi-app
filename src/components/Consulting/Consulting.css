@@ -1,0 +1,26 @@
+.inner-layout .ant-layout-content {
+    min-height: 100vh;
+}
+
+.inner-layout .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 54px;
+    padding: 0 2em 0 1em;
+    line-height: 54px;
+    background: #001529;
+}
+.inner-layout .header .ant-btn {
+    margin: 0;
+}
+.ant-tabs .ant-tabs-left-bar .ant-tabs-tab {
+    font-weight: 500;
+}
+.inner-layout .panel .title {
+    font-size: 24px;
+}
+.inner-layout .panel .content {
+    margin-top: 48px;
+}

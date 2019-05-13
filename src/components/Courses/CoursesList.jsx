@@ -23,28 +23,31 @@ const CoursesList = ({ courses, onCourseClick }) => (
       }}
       dataSource={courses}
       renderItem={course => (
-        <Link href="/editar-consultoria" to="editar-consultoria">
-        <List.Item  key={course.id}  onClick={() => onCourseClick(course.id)} {...course}
+        <List.Item  key={course.id}
+          actions={[
+            <Link href="/editar-consultoria" to="editar-consultoria" onClick={() => onCourseClick(course.id)} {...course}>
+            <IconText type="star-o" text="156" /></Link>, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />]}
           extra={
-            <div class="image-placeholder">
-                <h4>Upload an Image</h4>
-            </div>
+            <div>
+              <div class="image-placeholder">
+                  <h4>Upload an Image</h4>
+              </div>
+          </div>
           }
-          actions={[<IconText type="star-o" text="156" />, <IconText type="like-o" text="156" />, <IconText type="message" text="2" />]}
         >
+          
           <List.Item.Meta
             title={course.course_title}
             description={course.course_content}
           />
           <Progress
-            strokeColor={{
-              '0%': '#108ee9',
-              '100%': '#fc6a42',
-            }}
-            percent={course.course_progress}
-          />
+              strokeColor={{
+                '0%': '#108ee9',
+                '100%': '#fc6a42',
+              }}
+              percent={course.course_progress}
+            />
         </List.Item>
-        </Link>
       )}
     />
 )

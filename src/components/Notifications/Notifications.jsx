@@ -4,27 +4,27 @@ import NotificationList from './NotificationList'
 const data = [
   {
     id: 1, 
-    post_title: 'Notificaciones 1',
-    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    post_status: "pending"
+    post_title: 'Capacitacion "Experto en evacuaciones"',
+    post_content: "Vendiste este curso. Haz click aqui para ver mas detalles.",
+    post_type: "shopping",
   },
   {
     id: 2,
-    post_title: 'Notificaciones 2',
-    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    post_status: "approved"
+    post_title: 'Consultoria "El uso correcto del matafuegos"',
+    post_content: "Tienes una cita nueva pendiente de aprobacion. Haz click aqui para ver mas detalles.",
+    post_type: "video-camera"
   },
   {
     id: 3,
-    post_title: 'Notificaciones 3',
-    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    post_status: "draft"
+    post_title: 'Consultoria "Tipos de Matafuegos"',
+    post_content: "Tienes una cita nueva pendiente de aprobacion. Haz click aqui para ver mas detalles.",
+    post_type: "video-camera"
   },
   {
     id: 4,
-    post_title: 'Notificaciones 4',
-    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
-    post_status: "published"
+    post_title: 'Capacitacion "Evacuaciones para principiantes"',
+    post_content: "Vendiste este curso. Haz click aqui para ver mas detalles.",
+    post_type: "shopping"
   },
 ];
 
