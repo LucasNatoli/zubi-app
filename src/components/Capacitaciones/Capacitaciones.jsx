@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Avatar } from 'antd';
+import { List, Avatar, Card } from 'antd';
 const data = [
   {
     id: 1,
@@ -22,8 +22,8 @@ const data = [
 class Capacitaciones extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Capacitaciones</h1>
+      <Card title="Consultoria">
+        
         <List
           itemLayout="horizontal"
           dataSource={data}
@@ -37,7 +37,7 @@ class Capacitaciones extends React.Component {
             </List.Item>
           )}
         />
-      </div>
+      </Card>
     )
   }
 }
