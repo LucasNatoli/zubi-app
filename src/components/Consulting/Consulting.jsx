@@ -1,5 +1,7 @@
 import React from 'react'
 import ConsultingList from './ConsultingList'
+import { connect } from 'react-redux'
+import { zubiActions } from '../../actions'
 
 const data = [
   {
@@ -36,14 +38,39 @@ class Consulting extends React.Component {
   onConsultancyClick(id) {
     console.log(id)
   }
+
+  componentDidMount() {
+    const { dispatch } = this.props 
+    dispatch(zubiActions.getMisConsultorias())
+  }
+    
   render() {
+    const { posts } =  this.props
     return (
       <div>
-        <ConsultingList consulting={data} onConsultancyClick={this.onConsultancyClick}></ConsultingList>
+        <ConsultingList consulting={posts} onConsultancyClick={this.onConsultancyClick}></ConsultingList>
       </div>
     )}      
   }
 
+  function mapStateToProps(state) {
+    const { consulting } = state
+    console.log('consulting', consulting)
+    const {
+      isFetching,
+      lastUpdated,
+      items: posts
+    } = consulting || {
+      isFetching: true,
+      items: []
+    }
+  
+    return {
+      posts,
+      isFetching,
+      lastUpdated
+    }
+  }
+  
 
-export default Consulting
-
+export default connect(mapStateToProps)(Consulting)
