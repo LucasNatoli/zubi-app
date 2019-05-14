@@ -11,7 +11,7 @@ function getMisConsultorias() {
   return dispatch => {
     dispatch(request());
 
-    zubiService.fetchConsultorias()
+    zubiService.fetchConsulting()
       .then(
         consulting => dispatch(success(consulting)),
         error => dispatch(failure(error.toString()))
@@ -29,13 +29,14 @@ function getMisCapacitaciones() {
 
     zubiService.misCapacitaciones()
       .then(
-        capacitaciones => dispatch(success(capacitaciones)),
+        capacitaciones => {
+          dispatch(success(capacitaciones))},
         error => dispatch(failure(error.toString()))
       );
   };
 
   function request() { return { type: zubiConstants.ZUBI_GETALL_CAP_REQUEST } }
-  function success(capacitaciones) { return { type: zubiConstants.ZUBI_GETALL_CAP_SUCCESS, capacitaciones } }
+  function success(capacitaciones) { return { type: zubiConstants.ZUBI_GETALL_CAP_SUCCESS, capacitaciones, receivedAt: Date.now() } }
   function failure(error) { return { type: zubiConstants.ZUBI_GETALL_CAP_FAILURE, error } }
 }
 

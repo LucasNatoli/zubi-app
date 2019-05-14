@@ -19,19 +19,20 @@ export function consulting(state={
         items: action.consulting,
         lastUpdated: action.receivedAt
       })
+
+    case zubiConstants.ZUBI_GETALL_CONS_FAILURE:
+      return Object.assign({}, state, {
+          error: action.error
+      })
     default:
       return state
   }
 }
 
 
-export function zubi(state={}, action){
+export function capacitaciones(state={}, action){
   switch (action.type) {
 
-    case zubiConstants.ZUBI_GETALL_CONS_FAILURE:
-      return { 
-        error: action.error
-      };
 /* 
     case zubiConstants.GET_ALL_REQUEST:
       return {

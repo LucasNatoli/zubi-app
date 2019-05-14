@@ -1,47 +1,76 @@
 import React from 'react'
-import { List, Avatar, Card } from 'antd';
+import ConsultingList from './ConsultingList'
+import { connect } from 'react-redux'
+import { zubiActions } from '../../actions'
+
 const data = [
   {
-    id: 1,
-    title: 'Capacitacion 1',
+    id: 1, 
+    post_title: 'Consultoria 1',
+    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    post_status: "pending"
   },
   {
     id: 2,
-    title: 'Capacitacion 2',
+    post_title: 'Consultoria 2',
+    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    post_status: "approved"
   },
   {
     id: 3,
-    title: 'Capacitacion 3',
+    post_title: 'Consultoria 3',
+    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    post_status: "draft"
   },
   {
     id: 4,
-    title: 'Capacitacion 4',
+    post_title: 'Consultoria 4',
+    post_content: "Ant Design, a design language for background applications, is refined by Ant UED Team",
+    post_status: "published"
   },
 ];
 
 class Capacitaciones extends React.Component {
-  render() {
-    return (
-      <Card title="Consultoria">
-        
-        <List
-          itemLayout="horizontal"
-          dataSource={data}
-          renderItem={item => (
-            <List.Item key={item.id}>
-              <List.Item.Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title={<a href="http://localhost:3000/editar-capacitacion/">{item.title}</a>}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-              />
-            </List.Item>
-          )}
-        />
-      </Card>
-    )
+  constructor(props) {
+    super(props)
+    this.onTrainingClick = this.onTrainingClick.bind(this)
   }
-}
+  onTrainingClick(id) {
+    console.log(id)
+  }
 
+  componentDidMount() {
+    const { dispatch } = this.props 
+    dispatch(zubiActions.getMisCapacitaciones())
+  }
+    
+  render() {
+    const { capacitaciones } =  this.props
+    return (
+      <div>
+        <ConsultingList consulting={capacitaciones} onConsultancyClick={this.onTrainingClick}></ConsultingList>
+      </div>
+    )}      
+  }
 
-export default Capacitaciones
+  function mapStateToProps(state) {
+    const { capacitaciones } = state
+    console.log('state', state)
+    const {
+      isFetching,
+      lastUpdated,
+      items: posts
+    } = capacitaciones || {
+      isFetching: true,
+      items: []
+    }
+    
+    return {
+      posts,
+      isFetching,
+      lastUpdated
+    }
+  }
+  
 
+export default connect(mapStateToProps)(Capacitaciones)
