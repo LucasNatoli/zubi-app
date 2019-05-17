@@ -69,10 +69,11 @@ class Courses extends React.Component {
     console.log(id)
   }
   render() {
+    const { courses } = this.props
     return (
       <div>
         <h1>Cursos</h1>
-        <CoursesList courses={data} onCourseClick={this.onCourseClick}></CoursesList>
+        <CoursesList courses={courses.items} onCourseClick={this.onCourseClick}></CoursesList>
       </div>
     )}      
   }

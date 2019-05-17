@@ -6,6 +6,7 @@ import { users } from './users.reducer';
 import { alert } from './alert.reducer';
 import { capacitaciones, consulting } from  './zubi.reducer';
 import { courses } from './courses.reducer';
+import { agenda } from './agenda.reducers'
 
 const rootReducer = combineReducers({
   authentication,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   alert,
   capacitaciones, 
   consulting,
-  courses
+  courses,
+  agenda
 });
 
 export default rootReducer;

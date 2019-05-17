@@ -10,7 +10,8 @@ function getAllCourses(){
     dispatch(request());
     coursesService.fetchCourses()
       .then(
-        allCourses => dispatch(success(allCourses)),
+        allCourses => {
+          dispatch(success(allCourses))},
         error => dispatch(failure(error.toString()))
       );
   };

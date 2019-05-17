@@ -15,7 +15,7 @@ export function courses(state={
         return Object.assign({}, state, {
           isFetching: false,
           didInvalidate: false,
-          items: action.courses,
+          items: action.allCourses,
           lastUpdated: action.receivedAt
         })
       case coursesConstants.ZUBI_GETALL_COURSES_FAILURE:

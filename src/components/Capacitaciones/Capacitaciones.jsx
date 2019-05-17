@@ -45,17 +45,17 @@ class Capacitaciones extends React.Component {
   }
     
   render() {
-    const { capacitaciones } =  this.props
+    const { posts } =  this.props
+    console.log("this.props", this.props)
     return (
       <div>
-        <ConsultingList consulting={capacitaciones} onConsultancyClick={this.onTrainingClick}></ConsultingList>
+        <ConsultingList consulting={posts} onConsultancyClick={this.onTrainingClick}></ConsultingList>
       </div>
     )}      
   }
 
   function mapStateToProps(state) {
     const { capacitaciones } = state
-    console.log('state', state)
     const {
       isFetching,
       lastUpdated,

@@ -19,7 +19,7 @@ export default class DaytimeForm extends React.Component {
         <Row>
           <Col span="6">
             <Form.Item title="Dia de la semana">
-              <Checkbox>{this.props.day}</Checkbox>
+              <Checkbox value={this.props.day} checked={this.props.checked}>{this.props.day}</Checkbox>
             </Form.Item>
           </Col>
           <Col span="6">
@@ -29,6 +29,7 @@ export default class DaytimeForm extends React.Component {
                 format="HH:mm"
                 minuteStep={10}
                 defaultOpenValue={moment(this.props.openTime, 'HH:mm')}
+                value={moment(this.props.openTime, 'HH:mm')}
                 placeholder="Inicio" />
             </Form.Item>
           </Col>
@@ -39,6 +40,7 @@ export default class DaytimeForm extends React.Component {
                 format="HH:mm"
                 minuteStep={10}
                 defaultOpenValue={moment(this.props.closeTime, 'HH:mm')}
+                value={moment(this.props.closeTime, 'HH:mm')}
                 placeholder="Fin" />
             </Form.Item>
           </Col>

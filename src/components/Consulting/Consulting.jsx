@@ -55,7 +55,6 @@ class Consulting extends React.Component {
 
   function mapStateToProps(state) {
     const { consulting } = state
-    console.log('consulting', consulting)
     const {
       isFetching,
       lastUpdated,

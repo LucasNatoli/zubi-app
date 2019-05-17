@@ -4,6 +4,13 @@ import UploadJpg from '../UploadJpg'
 import './Consulting.css'
 
 export default class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.goHomeClick = this.goHomeClick.bind(this)
+  }
+  goHomeClick() {
+    this.props.history.push('/')
+  }
   render() {
     const { Header, Content } = Layout;
     const { Link } = Anchor
@@ -11,7 +18,8 @@ export default class extends React.Component {
     return (
       <Layout className="inner-layout">
         <Header className="header">
-          <Button type="secondary"><Icon type="arrow-left" />Volver al escritorio</Button>
+                
+          <Button type="secondary" onClick={this.goHomeClick}><Icon type="arrow-left" />Volver al escritorio</Button>
           <Button type="primary">Guardar</Button>
         </Header>
         <Content>
@@ -120,18 +128,20 @@ export default class extends React.Component {
                 <p>Los estudiantes que ven un vídeo promocional bien hecho tienen 5 veces más probabilidades de matricularse en tu consultoría. Esa estadística se multiplica por 10 si los vídeos son excepcionalmente buenos. Aprende a hacer los tuyos impresionantes.</p>
                     
 
+                <UploadJpg />
 
               </Form>
               <h4>Perfiles de los instructores</h4>
-              <Alert type="warning">
-                Todos los instructores visibles de este consultoría deben completar su perfil para que el consultoría se pueda publicar. Esto incluye el nombre, una foto y una breve biografía (mínimo de 50 palabras).
-            </Alert>
+              <Alert 
+                message="Todos los instructores visibles de este consultoría deben completar su perfil para que el consultoría se pueda publicar. Esto incluye el nombre, una foto y una breve biografía (mínimo de 50 palabras)."
+                type="warning" />
+              <Alert message="La biografía de un instructor debe tener al menos 50 palabras." type="warning"/>
+                
               <Avatar style={{ marginBottom: 20 }} src="/image_171x180.svg" />
-              <Alert type="warning">
-                <p>La biografía de un instructor debe tener al menos 50 palabras.</p>
-                <p>Es necesaria una imagen del instructor.</p>
-                <Link to="/mi-perfil" label="Actualiza tu perfil"></Link>
-              </Alert>
+                
+              {/*   <Alert message="Es necesaria una imagen del instructor." type="warning" />
+                
+              <Link to="/mi-perfil" label="Actualiza tu perfil"></Link> */}
             </TabPane>
             <TabPane tab="Precios y Cupones">Blank</TabPane>
           </Tabs>

@@ -29,8 +29,7 @@ function getMisCapacitaciones() {
 
     zubiService.misCapacitaciones()
       .then(
-        capacitaciones => {
-          dispatch(success(capacitaciones))},
+        capacitaciones => dispatch(success(capacitaciones)),
         error => dispatch(failure(error.toString()))
       );
   };

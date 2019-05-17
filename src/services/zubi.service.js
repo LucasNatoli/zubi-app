@@ -29,11 +29,9 @@ function misCapacitaciones() {
     headers: authHeader()
   };
 
-  console.log("fetchmisCapacitaciones")
   return fetch(`${config.apiUrl}/mis-capacitaciones`, requestOptions)
   .then(handleResponse)
   .then(capacitaciones => {
-    console.log("handled", capacitaciones)
     localStorage.setItem('capacitaciones', JSON.stringify(capacitaciones));
     return capacitaciones;
   });
