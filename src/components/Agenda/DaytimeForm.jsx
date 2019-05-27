@@ -26,22 +26,24 @@ export default class DaytimeForm extends React.Component {
             <Form.Item title="Item 1">
               <TimePicker
                 //onChange={onChange} 
-                format="HH:mm"
+                use12Hours
+                format="h:mm A"
                 minuteStep={10}
                 defaultOpenValue={moment(this.props.openTime, 'HH:mm')}
-                value={moment(this.props.openTime, 'HH:mm')}
-                placeholder="Inicio" />
+                /* value={moment(this.props.openTime, 'HH:mm')} */
+                placeholder="Desde" />
             </Form.Item>
           </Col>
           <Col span="6">
             <Form.Item title="Item 1">
               <TimePicker
                 //onChange={onChange}  
-                format="HH:mm"
+                use12Hours
+                format="h:mm A"
                 minuteStep={10}
                 defaultOpenValue={moment(this.props.closeTime, 'HH:mm')}
-                value={moment(this.props.closeTime, 'HH:mm')}
-                placeholder="Fin" />
+                /* value={moment(this.props.closeTime, 'HH:mm')} */
+                placeholder="Hasta" />
             </Form.Item>
           </Col>
         </Row>
