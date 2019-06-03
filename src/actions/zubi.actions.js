@@ -4,8 +4,40 @@ import { zubiService } from '../services/';
 export const zubiActions = {
   getMisConsultorias: getMisConsultorias,
   getMisCapacitaciones: getMisCapacitaciones,
-  filterVisibleConsulting: filterVisibleConsulting
+  filterVisibleConsulting: filterVisibleConsulting,
+  createConsultoria: createConsultoria,
+  getMyActiveChats: getMyActiveChats
 };
+
+function createConsultoria(title) {
+  return dispatch => {
+    dispatch(post())
+    zubiService.createConsultoria(title)
+      .then(
+        consultancy => dispatch(success(consultancy)),
+        error => dispatch(failure(error.toString))
+      )
+  }
+  function post() { return { type: zubiConstants.ZUBI_POST_CONSULTANCY } }
+  function success(consultancy) { return { type: zubiConstants.ZUBI_POST_CONSULTANCY_SUCCESS, consultancy, receivedAt: Date.now() } }
+  function failure(error) { return { type: zubiConstants.ZUBI_POST_CONSULTANCY_FAILURE, error }}
+}
+
+function getMyActiveChats() {
+  return dispatch => {
+    dispatch(request())
+    zubiService.fetchActiveChats()
+    .then(
+      chats => dispatch(success(chats)),
+      error => dispatch(failure(error.toString()))
+    );
+  
+  }
+  function request() { return { type: zubiConstants.ZUBI_GET_ACTIVE_CHATS_REQUEST } }
+  function success(chats) { return { type: zubiConstants.ZUBI_GET_ACTIVE_CHATS_SUCCESS, chats, receivedAt: Date.now() } }
+  function failure(error) { return { type: zubiConstants.ZUBI_GET_ACTIVE_CHATS_FAILURE, error } }
+
+}
 
 function getMisConsultorias() {
   return dispatch => {

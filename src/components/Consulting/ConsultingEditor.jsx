@@ -20,7 +20,7 @@ export default class extends React.Component {
         <Header className="header">
                 
           <Button type="secondary" onClick={this.goHomeClick}><Icon type="arrow-left" />Volver al escritorio</Button>
-          <Button type="primary">Guardar</Button>
+          <Button type="primary" href="/">Guardar</Button>
         </Header>
         <Content>
           <Tabs defaultActiveKey="1" tabPosition="left" style={{ marginTop: '2em'}}>

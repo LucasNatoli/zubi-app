@@ -9,11 +9,11 @@ import DashBoard from '../DashBoard/DashBoard';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
 import ConsultingEditor from '../Consulting/ConsultingEditor'
+import NewConsultancy from '../Consulting/NewConsultancy'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     const { dispatch } = this.props;
     history.listen((location, action) => {
       // clear alert on location change
@@ -35,8 +35,9 @@ class App extends React.Component {
             <PrivateRoute exact path="/mis-capacitaciones" component={DashBoard} page="training-list" />
             <PrivateRoute exact path="/agenda" component={DashBoard} page="agenda" />
             <PrivateRoute exact path="/mis-citas" component={DashBoard} page="mis-citas" />
-
+            <PrivateRoute exact path="/nueva-consultoria" component={NewConsultancy} />
             <PrivateRoute exact path="/editar-consultoria" component={ConsultingEditor} />
+            <PrivateRoute exact path="/mis-mensajes" component={DashBoard} page="mis-mensajes" />
 
             <Route path="/login" component={LoginPage} />
             <Route path="/register" component={RegisterPage} />

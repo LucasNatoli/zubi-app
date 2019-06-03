@@ -13,7 +13,6 @@ function fetchCourses() {
       method: 'GET',
       headers: authHeader()
   };
-  console.log("fetchCourses")
   return fetch(`${config.apiUrl}/get-all-courses`, requestOptions)
     .then(handleResponse)
     .then(courses => {

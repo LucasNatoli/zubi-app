@@ -36,8 +36,9 @@ class Agenda extends React.Component {
     })
     return (
       <Layout>
-        <h1>Agenda</h1>
-        <Text>Indica a tu audiencia en que dias y horarios pueden concertar citas de consultoria</Text>
+        <h1 style={{fontSize: 22}}>Carga tu agenda</h1>
+        <Text>Indica a tus clientes en que dias y horarios estas disponible para concertar video llamadas de consultoria.</Text>
+        <Text>Podes agregar mas de una banda horaria por dia haciendo click en el boton 'agregar horarios'</Text>
         {dias.map(dia=> (
           <DaytimeForm day={dia.dayName} checked={dia.checked} openTime={dia.openTime} closeTime={dia.closeTime}></DaytimeForm>
         ))}

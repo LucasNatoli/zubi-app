@@ -10,6 +10,8 @@ import Logo from '../../assets/images/logo-text.png'
 import Iso from '../../assets/images/iso.svg'
 import './DashBoard.css';
 import HomePage from '../HomePage/HomePage'
+import DinamicFormItem from '../DinamicFormItem' 
+import Chat from '../Chat/Chat'
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -38,7 +40,7 @@ class DashBoard extends React.Component {
           collapsedWidth="0"
           width="200"
           trigger={null}
-          onBreakpoint={(broken) => { console.log(broken); }}
+          //onBreakpoint={(broken) => { console.log(broken); }}
           onCollapse={(collapsed) => { this.setState({ collapsed: collapsed }) }}
           collapsible
           collapsed={this.state.collapsed}
@@ -75,6 +77,13 @@ class DashBoard extends React.Component {
                 <span className="nav-text">Citas</span>
               </Link>
             </Menu.Item>
+            <Menu.Item key="6">
+              <Link className="nav-text" href="/mis-mensajes" to="/mis-mensajes" title="Mensajes">
+                <Icon type="user" />
+                <span className="nav-text">Mensajes</span>
+              </Link>
+            </Menu.Item>
+
           </Menu>
         </Sider>
 
@@ -93,7 +102,8 @@ class DashBoard extends React.Component {
               {page === "consulting-list" ? <Consulting /> : ""}
               {page === "training-list" ? <Capacitaciones /> : ""}
               {page === "agenda" ? <Agenda /> : ""}
-              {page === "mis-citas" ? <Citas /> : ""}
+              {page === "mis-citas" ? <DinamicFormItem /> : ""}
+              {page === "mis-mensajes" ? <Chat /> : ""}
 
             </div>
           </Content>

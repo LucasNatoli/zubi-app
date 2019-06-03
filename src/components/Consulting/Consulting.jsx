@@ -3,6 +3,7 @@ import ConsultingList from './ConsultingList'
 import { connect } from 'react-redux'
 import { zubiActions } from '../../actions'
 
+/* 
 const data = [
   {
     id: 1, 
@@ -29,6 +30,7 @@ const data = [
     post_status: "published"
   },
 ];
+ */
 
 class Consulting extends React.Component {
   constructor(props) {
