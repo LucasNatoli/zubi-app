@@ -72,7 +72,7 @@ class Courses extends React.Component {
     const { courses } = this.props
     return (
       <div>
-        <h1>Cursos</h1>
+        <h1>Borradores</h1>
         <CoursesList courses={courses.items} onCourseClick={this.onCourseClick}></CoursesList>
       </div>
     )}      
