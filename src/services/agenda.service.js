@@ -1,8 +1,4 @@
-import { authHeader } from '../helpers';
-
-const config = {
-  apiUrl : 'http://bigos.lan/wp-json/wp-react/v2'
-}
+import { authHeader, config } from '../helpers';
 
 export const agendaService = {
   fetchAgenda: fetchAgenda
