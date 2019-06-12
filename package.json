@@ -2,7 +2,6 @@
   "name": "zubi-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://bigos.lan/app",
   "dependencies": {
     "antd": "^3.16.6",
     "immutable": "^4.0.0-rc.12",
