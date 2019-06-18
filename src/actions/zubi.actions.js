@@ -6,8 +6,25 @@ export const zubiActions = {
   getMisCapacitaciones: getMisCapacitaciones,
   filterVisibleConsulting: filterVisibleConsulting,
   createConsultoria: createConsultoria,
-  getMyActiveChats: getMyActiveChats
+  getMyActiveChats: getMyActiveChats,
+  getMyDrafts: getMyDrafts
 };
+
+function getMyDrafts() {
+  return dispatch => {
+    dispatch(request())
+    zubiService.fetchMyDrafts()
+    .then(
+      drafts => dispatch(success(drafts)),
+      error => dispatch(failure(error.toString()))
+    );
+  
+  }
+  function request() { return { type: zubiConstants.ZUBI_GETALL_CONS_REQUEST } }
+  function success(drafts) { return { type: zubiConstants.ZUBI_GETALL_DRAFTS_SUCCESS, drafts, receivedAt: Date.now() } }
+  function failure(error) { return { type: zubiConstants.ZUBI_GETALL_DRAFTS_FAILURE, error } }
+
+}
 
 function createConsultoria(title) {
   return dispatch => {

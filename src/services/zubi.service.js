@@ -4,8 +4,23 @@ export const zubiService = {
   fetchConsulting: fetchConsulting,
   misCapacitaciones: misCapacitaciones,
   postConsultancy: postConsultancy,
-  fetchActiveChats: fetchActiveChats
+  fetchActiveChats: fetchActiveChats,
+  fetchMyDrafts: fetchMyDrafts
 };
+
+function fetchMyDrafts() {
+  const requestOptions = {
+    method: 'GET',
+    headers: authHeader()
+  };
+  return fetch(`${config.apiUrl}/mis-borradores`, requestOptions)
+    .then(handleResponse)
+    .then(drafts => {
+      localStorage.setItem('drafts', JSON.stringify(drafts));
+      return drafts;
+    });
+
+}
 
 function postConsultancy() {
   const requestOptions = {
