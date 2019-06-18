@@ -4,7 +4,7 @@ import { authentication } from './authentication.reducer';
 import { registration } from './registration.reducer';
 import { users } from './users.reducer';
 import { alert } from './alert.reducer';
-import { capacitaciones, consulting, postConsulting, chatApp } from  './zubi.reducer';
+import { capacitaciones, consulting, postConsulting, chatApp, drafts } from  './zubi.reducer';
 import { courses } from './courses.reducer';
 import { agenda } from './agenda.reducers'
 
@@ -19,7 +19,8 @@ const rootReducer = combineReducers({
   postConsulting,
   courses,
   agenda, 
-  chatApp
+  chatApp,
+  drafts
 });
 
 export default rootReducer;

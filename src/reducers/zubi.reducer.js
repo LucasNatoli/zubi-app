@@ -1,5 +1,28 @@
 import { zubiConstants } from '../constants';
 
+export function drafts(state = {
+  isFetching: false,
+  drafts: {}
+}, action) {
+  switch (action.type) {
+    case zubiConstants.ZUBI_GETALL_DRAFTS_REQUEST:
+      return Object.assign({}, state, {
+        isFetching: true
+      })
+    case zubiConstants.ZUBI_GETALL_DRAFTS_SUCCESS:
+      return Object.assign({}, state, {
+        isFetching: false,
+        items: action.drafts
+      })   
+    case zubiConstants.ZUBI_GETALL_DRAFTS_FAILURE:
+      return Object.assign({}, state, {
+        error: action.error
+      })
+    default:
+      return state
+  }    
+}
+
 export function chatApp(state = {
   isFetching: false,
   chats: {}
