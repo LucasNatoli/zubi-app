@@ -13,7 +13,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props 
+    const { dispatch } = this.props
     dispatch(coursesActions.getAllCourses())
   }
 
@@ -23,19 +23,19 @@ class HomePage extends React.Component {
       <div>
         <Row gutter={16}>
 
-        <Col md={12}>
+          <Col md={12}>
             <Card>
               <Drafts />
             </Card>
-          </Col>          
-           <Col md={12}>
+          </Col>
+          <Col md={12}>
             <Card>
               <Courses courses={courses} />
             </Card>
-          </Col> 
+          </Col>
           <Col md={12}>
             <Card>
-              <Notifications/>
+              <Notifications />
             </Card>
           </Col>
         </Row>
@@ -54,7 +54,7 @@ function mapStateToProps(state) {
     isFetching: true,
     items: []
   }
-  
+
   return {
     courses,
     isFetching,
