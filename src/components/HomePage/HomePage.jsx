@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Card } from 'antd';
 import Courses from '../Courses/Courses';
 import Notifications from '../Notifications/Notifications';
+import Drafts from '../Drafts/Drafts';
 import { connect } from 'react-redux'
 import { coursesActions } from '../../actions'
 
@@ -21,11 +22,17 @@ class HomePage extends React.Component {
     return (
       <div>
         <Row gutter={16}>
-          <Col md={12}>
+
+        <Col md={12}>
+            <Card>
+              <Drafts />
+            </Card>
+          </Col>          
+           <Col md={12}>
             <Card>
               <Courses courses={courses} />
             </Card>
-          </Col>
+          </Col> 
           <Col md={12}>
             <Card>
               <Notifications/>
