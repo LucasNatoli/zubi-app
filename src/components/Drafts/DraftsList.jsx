@@ -23,11 +23,16 @@ const DraftsList = ({ drafts, onDraftClick }) => (
     }}
     dataSource={drafts}
     renderItem={draft => (
-      <List.Item key={draft.id}
+      <List.Item key={draft.ID}
+        actions={[
+          <Link href="#" onClick={() => onDraftClick(draft.ID)} {...draft}><IconText type="form" text="Completar" /></Link>,
+          <IconText type="check" text="Pedir revisión" />,
+
+        ]}
         extra={
           <div>
             <div class="image-placeholder">
-              <h4>Upload an Image</h4>
+              <h4>Subí una imagen</h4>
             </div>
           </div>
         }
@@ -46,7 +51,8 @@ const DraftsList = ({ drafts, onDraftClick }) => (
         />
       </List.Item>
     )}
-  />
+  >
+  </List>
 )
 /* 
 TodoList.propTypes = {

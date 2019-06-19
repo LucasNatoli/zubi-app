@@ -11,23 +11,25 @@ class Drafts extends React.Component {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props 
+    const { dispatch } = this.props
     dispatch(zubiActions.getMyDrafts())
   }
 
   onDraftClick(id) {
-    console.log(id)
+    console.log("draft click", id)
   }
 
   render() {
     const { drafts } = this.props
     return (
-      <div>
+      <div>       
         <h1>Borradores (Drafts)</h1>
         <DraftsList drafts={drafts.items} onDraftClick={this.onDraftClick}></DraftsList>
+
       </div>
-    )}      
+    )
   }
+}
 
 function mapStateToProps(state) {
   const { drafts } = state
@@ -39,7 +41,7 @@ function mapStateToProps(state) {
     isFetching: true,
     items: []
   }
-  
+
   return {
     drafts,
     isFetching,

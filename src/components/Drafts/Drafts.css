@@ -1,0 +1,14 @@
+.image-placeholder {
+  width: 160px;
+  height: 100px;
+  background: rgb(204, 204, 204);
+  overflow: hidden;
+  border: 1px dashed #aaa;
+}
+.image-placeholder h4 {
+  color: rgb(241, 241, 241);
+  width: 100px;
+  margin: 30px auto;
+  text-align: center;
+  display: block;
+}   
