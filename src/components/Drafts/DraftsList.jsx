@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { List, Icon, Progress } from 'antd'
 import './Drafts.css'
-import { IconText } from '../IconText'
+import IconText from '../IconText'
 
 const DraftsList = ({ drafts, onDraftClick }) => (
 

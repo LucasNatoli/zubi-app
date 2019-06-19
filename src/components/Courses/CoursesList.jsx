@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { List, Icon, Progress } from 'antd'
 import './Courses.css'
-import { IconText } from '../IconText'
+import IconText from '../IconText'
 
 const CoursesList = ({ courses, onCourseClick }) => (
 

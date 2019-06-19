@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './ChatList.css'
 import { IntlProvider, FormattedDate } from "react-intl";
 import { FormattedRelative } from 'react-intl';
-import { IconText } from '../IconText'
+import IconText from '../IconText'
 
 
 class ChatList extends React.Component {
