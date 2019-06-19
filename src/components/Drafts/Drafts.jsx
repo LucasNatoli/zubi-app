@@ -23,10 +23,7 @@ class Drafts extends React.Component {
   render() {
     const { drafts } = this.props
     return (
-      <Card
-        title="Borradores"
-        extra={[<span style={{color: '#08c'}}><Icon type="plus-square" style={{ fontSize: '16px'}} /> Hello</span>]}
-        actions={[<Icon type="setting" />]}>
+      <Card title="Borradores">
         <DraftsList drafts={drafts.items} onDraftClick={this.onDraftClick}></DraftsList>
       </Card>
     )
