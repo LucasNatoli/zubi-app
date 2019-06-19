@@ -4,13 +4,7 @@ import { Link } from 'react-router-dom'
 import './ChatList.css'
 import { IntlProvider, FormattedDate } from "react-intl";
 import { FormattedRelative } from 'react-intl';
-
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon type={type} style={{ marginRight: 8 }} />
-    {text}
-  </span>
-);
+import { IconText } from '../IconText'
 
 
 class ChatList extends React.Component {

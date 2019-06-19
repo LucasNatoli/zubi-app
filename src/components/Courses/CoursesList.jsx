@@ -2,13 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { List, Icon, Progress } from 'antd'
 import './Courses.css'
-
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon type={type} style={{ marginRight: 8 }} />
-    {text}
-  </span>
-);
+import { IconText } from '../IconText'
 
 const CoursesList = ({ courses, onCourseClick }) => (
 

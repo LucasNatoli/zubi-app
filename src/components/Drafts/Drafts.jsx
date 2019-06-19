@@ -2,6 +2,7 @@ import React from 'react'
 import DraftsList from './DraftsList'
 import { connect } from 'react-redux'
 import { zubiActions } from '../../actions'
+import { Card, Icon } from 'antd'
 
 
 class Drafts extends React.Component {
@@ -22,11 +23,12 @@ class Drafts extends React.Component {
   render() {
     const { drafts } = this.props
     return (
-      <div>       
-        <h1>Borradores (Drafts)</h1>
+      <Card
+        title="Borradores"
+        extra={[<span style={{color: '#08c'}}><Icon type="plus-square" style={{ fontSize: '16px'}} /> Hello</span>]}
+        actions={[<Icon type="setting" />]}>
         <DraftsList drafts={drafts.items} onDraftClick={this.onDraftClick}></DraftsList>
-
-      </div>
+      </Card>
     )
   }
 }
