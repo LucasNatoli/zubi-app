@@ -3,6 +3,7 @@
 # dev temp
 /src/components/Consultoria
 /src/components/WizardConsultoria
+.vscode
 
 # dependencies
 /node_modules
