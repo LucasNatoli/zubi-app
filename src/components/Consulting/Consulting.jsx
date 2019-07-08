@@ -8,41 +8,45 @@ class Consulting extends React.Component {
     super(props)
     this.onConsultancyClick = this.onConsultancyClick.bind(this)
   }
+
   onConsultancyClick(id) {
-    console.log(id)
+    console.log("consultoria", id)
   }
 
   componentDidMount() {
-    const { dispatch } = this.props 
+    const { dispatch } = this.props
     dispatch(zubiActions.getMisConsultorias())
   }
-    
+
   render() {
-    const { posts } =  this.props
+    const { posts, isFetching } = this.props
     return (
-      <div>
-        <ConsultingList consulting={posts} onConsultancyClick={this.onConsultancyClick}></ConsultingList>
-      </div>
-    )}      
+      <ConsultingList 
+        consulting={posts} 
+        loading={isFetching} 
+        onConsultancyClick={this.onConsultancyClick}
+      ></ConsultingList>
+    )
+  }
+}
+
+function mapStateToProps(state) {
+  const { consulting } = state
+  const {
+    isFetching,
+    lastUpdated,
+    items: posts
+  } = consulting || {
+    isFetching: true,
+    items: []
   }
 
-  function mapStateToProps(state) {
-    const { consulting } = state
-    const {
-      isFetching,
-      lastUpdated,
-      items: posts
-    } = consulting || {
-      isFetching: true,
-      items: []
-    }
-  
-    return {
-      posts,
-      isFetching,
-      lastUpdated
-    }
+  return {
+    posts,
+    isFetching,
+    lastUpdated
   }
-  
+}
+
 
 export default connect(mapStateToProps)(Consulting)

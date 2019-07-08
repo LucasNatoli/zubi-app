@@ -3,40 +3,38 @@ import { Button, Form, Icon, Input, Layout } from 'antd';
 import { connect } from 'react-redux'
 import { zubiActions } from '../../actions'
 
+let user = JSON.parse(localStorage.getItem('user'));
 
 class NewConsultancyForm extends React.Component {
   constructor(props) {
     super(props)
+    this.state= {
+      loading: false
+    }
+    console.log('props', props)
   }
-/* 
-  componentDidMount() {
-    const { dispatch } = this.props 
-    dispatch(zubiActions.getMisConsultorias())
-  } */
 
   handleSubmit = e => {
     e.preventDefault();
+    console.log('title', this.props.form.getFieldValue('title'))
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        console.log('user', user)
+        //zubiActions.createConsultoria()
       }
     });
   };
 
-  goHomeClick() {
-    this.props.history.push('/')
-  }
   render() {
     const { Header, Content } = Layout;
     const { getFieldDecorator } = this.props.form;
     return (
       <Layout className="inner-layout">
         <Header className="header">
-          <Button type="secondary" onClick={this.goHomeClick}><Icon type="arrow-left" />Volver al escritorio</Button>
-          <Button type="primary"
-          >Continuar</Button>
+          <Button type="secondary" href="/"><Icon type="arrow-left" />Volver al escritorio</Button>
         </Header>
-        <Content style={{margin:20}}>
+        <Content style={{ margin: 20 }}>
           <h1>Ingresa el nombre de tu consultoria. Este nombre sera el que se muestre como título.</h1>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
@@ -48,6 +46,9 @@ class NewConsultancyForm extends React.Component {
                   placeholder="Titulo"
                 />,
               )}
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">Continuar</Button>
             </Form.Item>
           </Form>
         </Content>

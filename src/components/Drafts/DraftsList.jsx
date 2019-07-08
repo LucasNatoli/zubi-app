@@ -4,7 +4,7 @@ import { List, Icon, Progress } from 'antd'
 import './Drafts.css'
 import IconText from '../IconText'
 
-const DraftsList = ({ drafts, onDraftClick }) => (
+const DraftsList = ({ drafts, loading, onDraftClick }) => (
 
   <List
     itemLayout="vertical"
@@ -16,10 +16,16 @@ const DraftsList = ({ drafts, onDraftClick }) => (
       pageSize: 3,
     }}
     dataSource={drafts}
+    //loading={loading} TODO: NO FUNCIONA
     renderItem={draft => (
       <List.Item key={draft.ID}
         actions={[
-          <Link href="#" onClick={() => onDraftClick(draft.ID)} {...draft}><IconText type="form" text="Completar" /></Link>,
+          <Link 
+            href={draft.course_type == 'consultoria' ? "/editar-consultoria/" + draft.ID : "/editar-capacitacion/" + draft.ID} 
+            to={draft.course_type == 'consultoria' ? "/editar-consultoria/" + draft.ID : "/editar-capacitacion/" + draft.ID}
+          >
+            <IconText type="form" text="Completar" />
+          </Link>,
           <IconText type="check" text="Pedir revisión" />,
 
         ]}

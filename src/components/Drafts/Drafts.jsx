@@ -21,10 +21,10 @@ class Drafts extends React.Component {
   }
 
   render() {
-    const { drafts } = this.props
+    const { drafts, isFetching } = this.props
     return (
       <Card title="Borradores">
-        <DraftsList drafts={drafts.items} onDraftClick={this.onDraftClick}></DraftsList>
+        <DraftsList drafts={drafts.items} loading={isFetching} onDraftClick={this.onDraftClick}></DraftsList>
       </Card>
     )
   }

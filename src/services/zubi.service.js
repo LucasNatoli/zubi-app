@@ -46,6 +46,10 @@ function fetchActiveChats() {
 
 }
 function fetchConsulting() {
+/*   if (localStorage.getItem('consultorias')) {
+    return new Promise((resolve, reject) => { resolve(JSON.parse(localStorage.getItem('consultorias')))})
+  } */
+  
   const requestOptions = {
     method: 'GET',
     headers: authHeader()

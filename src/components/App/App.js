@@ -35,8 +35,8 @@ class App extends React.Component {
             <PrivateRoute exact path="/mis-capacitaciones" component={DashBoard} page="training-list" />
             <PrivateRoute exact path="/agenda" component={DashBoard} page="agenda" />
             <PrivateRoute exact path="/mis-citas" component={DashBoard} page="mis-citas" />
-            <PrivateRoute exact path="/nueva-consultoria" component={NewConsultancy} />
-            <PrivateRoute exact path="/editar-consultoria" component={ConsultingEditor} />
+            <PrivateRoute path="/nueva-consultoria" component={NewConsultancy} />
+            <PrivateRoute exact path="/editar-consultoria/:id" component={ConsultingEditor} />
             <PrivateRoute exact path="/mis-mensajes" component={DashBoard} page="mis-mensajes" />
 
             <Route path="/login" component={LoginPage} />

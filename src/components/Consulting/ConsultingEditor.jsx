@@ -1,28 +1,28 @@
 import React from 'react'
-import { Alert, Anchor, Avatar, Button, Card, Col, Form, Icon, Input, Layout, Row, Tabs, Upload } from 'antd';
+import { Alert, Avatar, Button, Card, Col, Form, Icon, Input, Layout, Row, Tabs, Upload } from 'antd';
 import UploadJpg from '../UploadJpg'
 import './Consulting.css'
+import { connect } from 'react-redux'
+import { zubiActions } from '../../actions'
 
-export default class extends React.Component {
+
+class ConsultingForm extends React.Component {
   constructor(props) {
     super(props)
-    this.goHomeClick = this.goHomeClick.bind(this)
-  }
-  goHomeClick() {
-    this.props.history.push('/')
   }
   render() {
+    this.props.post && console.log('rendering post', this.props.post)
     const { Header, Content } = Layout;
-    const { Link } = Anchor
     const TabPane = Tabs.TabPane;
+
     return (
-      <Layout className="inner-layout">
+      <Layout className="inner-layout ">
         <Header className="header">
-                
           <Button type="secondary" onClick={this.goHomeClick}><Icon type="arrow-left" />Volver al escritorio</Button>
           <Button type="primary" href="/">Guardar</Button>
         </Header>
         <Content>
+          <h1>Id: { this.props.post && this.props.post.ID}</h1>
           <Tabs defaultActiveKey="1" tabPosition="left" style={{ marginTop: '2em'}}>
             <TabPane tab="Llega a tus estudiantes" key="1" style={{ margin: '0 2em'}} className="panel">
               <h3 className="title">Llega a tus estudiantes</h3>
@@ -88,7 +88,13 @@ export default class extends React.Component {
               <hr></hr>
               <Form>
                 <h4>Título de la consultoría</h4>
-                <Input type="text" name="titulo_de_la_consultoría" placeholder="Inserta el título de tu consultoría" />
+
+                <Input 
+                  type="text" 
+                  name="titulo_de_la_consultoría" 
+                  placeholder="Inserta el título de tu consultoría"
+                  value={this.props.post && this.props.post.post_title} 
+                />
                 <h4>Descripción de la consultoría</h4>
                 <Input type="text" name="descripcion_de_la_consultoría" placeholder="Inserta la descripción de tu consultoría." maxLength="144" />
                 <h4>Categoría de la consultoría</h4>
@@ -146,7 +152,59 @@ export default class extends React.Component {
             <TabPane tab="Precios y Cupones">Blank</TabPane>
           </Tabs>
         </Content>
-      </Layout>
+      </Layout>      
     )
   }
 }
+
+class ConsultingEditor extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log('ConsultingEditor Props', props.match.params.id)
+    this.goHomeClick = this.goHomeClick.bind(this)
+  }
+
+  componentDidMount() {
+    const { dispatch } = this.props
+    dispatch(zubiActions.getMisConsultorias())
+  }
+
+  goHomeClick() {
+    this.props.history.push('/')
+  }
+  render() {
+    const { posts } = this.props
+    const postId = this.props.match.params.id
+    const post = posts.find(post => post.ID == postId)
+    //TODO: Si el id del post no existe debe mandar a 404
+    return (
+      <ConsultingForm post={post}></ConsultingForm>
+    )
+  }
+}
+
+
+function mapStateToProps(state) {
+  const { consulting, authentication } = state
+  //TODO: Revisar que pasa con authentication invalido. fallo en ventana de incognito
+  let userId = authentication.user.data.ID ? authentication.user.data.ID :  0
+  
+  const {
+    isFetching,
+    lastUpdated,
+    items: posts
+  } = consulting || {
+    isFetching: true,
+    items: []
+  }
+
+  return {
+    userId, 
+    posts,
+    isFetching,
+    lastUpdated
+  }
+}
+
+
+export default connect(mapStateToProps)(ConsultingEditor)
