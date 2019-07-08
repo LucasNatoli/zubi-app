@@ -22,7 +22,7 @@ class ConsultingForm extends React.Component {
           <Button type="primary" href="/">Guardar</Button>
         </Header>
         <Content>
-          <h1>Id: { this.props.post && this.props.post.ID}</h1>
+          <h1>Id: { this.props.post && this.props.post.post_content}</h1>
           <Tabs defaultActiveKey="1" tabPosition="left" style={{ marginTop: '2em'}}>
             <TabPane tab="Llega a tus estudiantes" key="1" style={{ margin: '0 2em'}} className="panel">
               <h3 className="title">Llega a tus estudiantes</h3>
@@ -37,7 +37,6 @@ class ConsultingForm extends React.Component {
                 <Input type="text" name="respuesta_1" placeholder="Ejemplo: Crear un modelo de negocios" />
               </div>
             </TabPane>
-
 
             <TabPane tab="Grabación y edición" key="2">
               <Layout>
@@ -96,7 +95,12 @@ class ConsultingForm extends React.Component {
                   value={this.props.post && this.props.post.post_title} 
                 />
                 <h4>Descripción de la consultoría</h4>
-                <Input type="text" name="descripcion_de_la_consultoría" placeholder="Inserta la descripción de tu consultoría." maxLength="144" />
+                <Input 
+                  type="text" 
+                  name="descripcion_de_la_consultoría" 
+                  placeholder="Inserta la descripción de tu consultoría." 
+                  value={this.props.post && this.props.post.post_content}
+                  maxLength="144" />
                 <h4>Categoría de la consultoría</h4>
                 <Input type="text" name="categoria_de_la_consultoría" placeholder="Inserta la descripción de tu consultoría." maxLength="144" />
                 <h4>Imagen de la consultoría</h4>
@@ -106,33 +110,8 @@ class ConsultingForm extends React.Component {
 
                 <UploadJpg />
 
-                {/*                 <Row>
-                  <Col sm={1} md={6}>
-                    <img
-                      style={{ width: '100%', height: 'auto' }}
-                      className="mr-3"
-                      src="/subi_tu_foto.png"
-                      alt="Subi tu foto"
-                    />
-                  </Col>
-                  <Col sm={1} md={6}>
-                    <Upload className="mb-3">
-                      <Input
-                        placeholder="No has seleccionado un archivo"
-                        aria-label="No has seleccionado un archivo"
-                      />
-                      <Upload.Append>
-                        <Button>Subir imagen</Button>
-                      </Upload.Append>
-                    </Upload>
-                  </Col>
-                </Row> */}
-
-
-
                 <h4>Video Promocional</h4>
                 <p>Los estudiantes que ven un vídeo promocional bien hecho tienen 5 veces más probabilidades de matricularse en tu consultoría. Esa estadística se multiplica por 10 si los vídeos son excepcionalmente buenos. Aprende a hacer los tuyos impresionantes.</p>
-                    
 
                 <UploadJpg />
 
@@ -149,6 +128,7 @@ class ConsultingForm extends React.Component {
                 
               <Link to="/mi-perfil" label="Actualiza tu perfil"></Link> */}
             </TabPane>
+
             <TabPane tab="Precios y Cupones">Blank</TabPane>
           </Tabs>
         </Content>
