@@ -2,11 +2,13 @@ import React from 'react'
 import { Avatar, Card, Icon, List } from 'antd'
 import { Link } from 'react-router-dom'
 
-const ConsultingList = ({ consulting, onConsultancyClick }) => (
+const CapacitacionesList = ({ consulting, loading, onConsultancyClick }) => (
   <Card title="Capacitaciones">
     <List
-      itemLayout="horizontal"
+      itemLayout="vertical"
+      size="large"
       dataSource={consulting}
+      loading={loading}
       renderItem={cons => (
         <Link href="/editar-consultoria" to="editar-consultoria">
           <List.Item key={cons.id} onClick={() => onConsultancyClick(cons.id)} {...cons}>
@@ -36,4 +38,4 @@ TodoList.propTypes = {
   onTodoClick: PropTypes.func.isRequired
 } */
 
-export default ConsultingList
+export default CapacitacionesList
