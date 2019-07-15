@@ -19,7 +19,7 @@ class ConsultingList extends React.Component {
         dataSource={this.props.consulting}
         loading={this.props.loading}
         renderItem={cons => (
-          <Link href="/editar-consultoria" to="/editar-consultoria">
+          <Link href={"/editar-consultoria/" + cons.ID} to={"/editar-consultoria/" + cons.ID}>
             <List.Item
               key={cons.ID}
               actions={[
