@@ -12,6 +12,7 @@ import './DashBoard.css';
 import HomePage from '../HomePage/HomePage'
 import DinamicFormItem from '../DinamicFormItem' 
 import Chat from '../Chat/Chat'
+import CropImage from '../CropImage'
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -102,7 +103,7 @@ class DashBoard extends React.Component {
               {page === "consulting-list" ? <Consulting /> : ""}
               {page === "training-list" ? <Capacitaciones /> : ""}
               {page === "agenda" ? <Agenda /> : ""}
-              {page === "mis-citas" ? <DinamicFormItem /> : ""}
+              {page === "mis-citas" ? <CropImage /> : ""}
               {page === "mis-mensajes" ? <Chat /> : ""}
 
             </div>
