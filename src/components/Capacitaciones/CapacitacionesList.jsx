@@ -2,20 +2,20 @@ import React from 'react'
 import { Avatar, Card, Icon, List } from 'antd'
 import { Link } from 'react-router-dom'
 
-const CapacitacionesList = ({ consulting, loading, onConsultancyClick }) => (
+const CapacitacionesList = ({ capacitaciones, loading, onConsultancyClick }) => (
   <Card title="Capacitaciones">
     <List
       itemLayout="vertical"
       size="large"
-      dataSource={consulting}
+      dataSource={capacitaciones}
       loading={loading}
-      renderItem={cons => (
-        <Link href="/editar-consultoria" to="editar-consultoria">
-          <List.Item key={cons.id} onClick={() => onConsultancyClick(cons.id)} {...cons}>
+      renderItem={capacitacion => (
+        <Link href={"/editar-capacitacion/" + capacitacion.ID} to={"/editar-capacitacion/" + capacitacion.ID}>
+          <List.Item key={capacitacion.id} onClick={() => onConsultancyClick(capacitacion.id)} {...capacitacion}>
             <List.Item.Meta
               avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-              title={cons.post_title}
-              description={cons.post_content}
+              title={capacitacion.post_title}
+              description={capacitacion.post_content}
               extra={
                 <div class="image-placeholder">
                   <h4>image placeholder text</h4>

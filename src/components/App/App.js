@@ -10,6 +10,7 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import './App.css';
 import ConsultingEditor from '../Consulting/ConsultingEditor'
 import NewConsultancy from '../Consulting/NewConsultancy'
+import CapacitacionEditor from '../Capacitaciones/CapacitacionEditor'
 
 class App extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class App extends React.Component {
             <PrivateRoute exact path="/mis-citas" component={DashBoard} page="mis-citas" />
             <PrivateRoute path="/nueva-consultoria" component={NewConsultancy} />
             <PrivateRoute exact path="/editar-consultoria/:id" component={ConsultingEditor} />
+            <PrivateRoute exact path="/editar-capacitacion/:id" component={CapacitacionEditor} />
             <PrivateRoute exact path="/mis-mensajes" component={DashBoard} page="mis-mensajes" />
 
             <Route path="/login" component={LoginPage} />
