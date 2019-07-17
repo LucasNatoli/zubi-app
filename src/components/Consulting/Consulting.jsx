@@ -2,6 +2,7 @@ import React from 'react'
 import ConsultingList from './ConsultingList'
 import { connect } from 'react-redux'
 import { zubiActions } from '../../actions'
+import './Consulting.css'
 
 class Consulting extends React.Component {
   constructor(props) {
